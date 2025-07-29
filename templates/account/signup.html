@@ -1,21 +1,37 @@
-{% extends "account/base.html" %}
-
+{% extends "base.html" %}
 {% load i18n %}
-
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
-
+{% block head_title %}{% trans "Signup" %}{% endblock %}
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<!-- sign in page content here -->
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+<!-- header -->
+<header id="header" class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-6 text-center">
+            <h1 id="signin-title" class="display-3">Sign Up</h1>
+            <p>Welcome to Planet Maths. If you already have an account, then <a class="link" href="{{ signup_url }}">sign in.</a></p>
+        </div>
+    </div>
+</header>
 
-{% endblock content %}
+<!-- main content -->
+<main class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-6 text-center">
+            <form class="signup" id="signup_form" method="post"
+            action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}"
+                value="{{ redirect_field_value }}" />
+            {% endif %}
+                <button class="btn btn-signup right" type="submit">
+                {% trans "Sign Up" %} &raquo;</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

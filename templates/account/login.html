@@ -1,11 +1,9 @@
 {% extends "base.html" %}
-
 {% load i18n %}
 {% load account socialaccount %}
-
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
-
 {% block content %}
+
 <!-- log in page content here -->
 
 <!-- header -->
@@ -13,20 +11,15 @@
     <div class="row justify-content-center">
         <div class="col-12 col-lg-6 text-center">
             <h1 id="signin-title" class="display-3">Sign In</h1>
+            <p>Welcome back to Planet Maths. To access site features, please log in. If
+                you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+                first.</p>
         </div>
     </div>
 </header>
 
 <!-- main content -->
 <main class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-6 text-center">
-            <h3>{% trans "Sign In" %}</h3>
-            <p>{% blocktrans %}Welcome back to Planet Maths. To access site features, please log in. If
-                you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
-        </div>
-    </div>
     <div class="row justify-content-center">
         <div class="col-12 col-lg-6 text-center">
             <form class="login" method="POST" action="{% url 'account_login' %}">
