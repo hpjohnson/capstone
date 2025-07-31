@@ -15,7 +15,33 @@
 
 <!-- main content -->
 <main>
-    <p>this is where the question page content would go, if i had any.</p>
+    <div id="questions-container" class="container-fluid">
+        <div id="questions-row" class="row" data-masonry='{"percentPosition": true}'>
+            {% for question in questions %}
+            {% if question.approved == 2 %}
+            <div class="card col-12 col-md-6 col-lg-4 col-xl-3" data-id="{{ question.questionID }}">
+                <div class="card-body">
+                    <h5 class="display-5 card-title">{{ question.title }}</h5>
+                    <h6 class="display-6 card-subtitle">Created By {{ question.userID }}</h6>
+                    <p>{{ question.summary }}</p>
+                    <p class="hidden">{{ question.content }}</p>
+                    <button class="btn btn-primary">View Question</button>
+                </div>
+                <div class="card-footer">
+                    <span class="difficulty">Difficulty - {{ question.difficulty }}</span>
+                    <span class="created-on">Created On - {{ question.dateCreated }}</span>
+                    <span class="updated-on">Last Updated - {{ question.dateUpdated }}</span>
+                    <span class="update-count">Times Updated - {{ question.updateCount }}</span>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 </main>
 
-{% endblock %}
+{% endblock content %}
+
+{% block extra_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+{% endblock extra_scripts %}

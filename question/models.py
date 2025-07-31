@@ -17,3 +17,6 @@ class Question(models.Model):
     updateCount = models.IntegerField(default=0)
     difficulty = models.IntegerField(choices=DIFFICULTY, default=-1)
     approved = models.IntegerField(choices=STATUS, default=0)
+
+    def __str__(self):
+        return self.title

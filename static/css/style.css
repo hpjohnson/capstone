@@ -4,6 +4,10 @@
 
 /* general styles */
 
+.hidden {
+    display: none;
+}
+
 /* header */
 .header-text {
     color: red;
