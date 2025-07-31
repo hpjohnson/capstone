@@ -9,6 +9,11 @@
 }
 
 /* header */
+
+#header {
+    margin-top: 56px;
+}
+
 .header-text {
     color: red;
 }
