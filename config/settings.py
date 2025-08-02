@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'question',
     'home',
     'accountManagement',
+    'manageQuestions',
 ]
 
 SITE_ID = 1
