@@ -88,6 +88,25 @@ h2 {
     display: none;
 }
 
+/* navbar */
+#navbar {
+    background-color: var(--box-colour-1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.logged-in-text {
+    font-weight: 500;
+    color: white;
+}
+
+/* ok - this fix for the logged in text changing colour on hover is stupid, but it DOES work */
+.logged-in-text:hover {
+    color: white;
+}
+
 /* header */
 #header {
     /* margin top only needs 56 pixels to clear the navbar, adding extra here for spacing between elements */
@@ -135,12 +154,45 @@ h2 {
     color: white
 }
 
+/* footer */
+
+#footer {
+    background-color: var(--box-colour-1);
+    padding-top: 14px;
+}
+
+.footer-title-text {
+    font-weight: 700;
+}
+
+.footer-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin: 10px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.footer-icon:hover {
+    color: var(--highlight-colour-2);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
 /* buttons */
 .home-page-button {
     background-color: var(--highlight-colour-1);
     color: var(--box-colour-1);
     font-weight: 700;
     font-size: 1.2rem;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
 }
 
 .home-page-button:hover {
@@ -172,4 +224,32 @@ h2 {
         font-size: 1rem;
     }
     
+}
+
+/* large and above */
+@media screen and (min-width: 992px) {
+
+    /* fix home page card heights */
+    .home-question-box {
+        padding-bottom: 144px;
+    }
+}
+
+/* xl and above */
+@media screen and (min-width: 1200px) {
+    
+    /* fix home page card heights */
+    .home-question-box {
+        padding-bottom: 96px;
+    }
+
+}
+
+/* xxl and above */
+@media screen and (min-width: 1400px) {
+
+    /* fix home page card heights */
+    .home-question-box {
+        padding-bottom: 120px;
+    }
 }

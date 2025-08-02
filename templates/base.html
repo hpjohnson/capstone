@@ -28,9 +28,9 @@
 
 <body class="d-flex flex-column min-vh-100">
     <!-- navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home_page' %}">Planet Maths</a>
+            <a class="navbar-brand gradient-text" href="{% url 'home_page' %}">Planet Maths</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,8 +64,8 @@
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                                        <li class="nav-item">
-                        <div class="nav-link">Logged in as {{ user }}</div>
+                    <li class="nav-item">
+                        <div class="nav-link logged-in-text">Logged in as {{ user }}</div>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -91,12 +91,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <!-- link to github -->
-                <div class="col-12 col-md-6 text-center">
-                    <h2>Source Code</h2>
-                    <p>
+                <div class="col-12 text-center">
+                    <h2 class="display-6 footer-title-text">Source Code</h2>
+                    <p class="footer-text">
                         <a href="https://github.com/hpjohnson/capstone" target="_blank" rel="noopener"
-                            aria-label="Visit the creators github for the source code (opens in new tab)"><i
-                                class="fa-brands fa-square-github"></i>
+                            aria-label="Visit the creators github (opens in new tab)"><i
+                                class="fa-brands fa-square-github footer-icon"></i>
                         </a>
                     </p>
                 </div>
