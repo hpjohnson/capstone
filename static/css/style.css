@@ -1,19 +1,175 @@
-/* fonts */
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /* variables */
+:root {
+    --font: "IBM Plex Mono", sans-serif;
+    /* dark blue background */
+    --background-colour-1: #060018;
+    /* highlight blue */
+    --highlight-colour-1: #85c7f2;
+    /* highlight green */
+    --highlight-colour-2: #c3e8bd;
+    /* correct green */
+    --correct-green: #9cdd92;
+    /* incorrect red */
+    --incorrect-red: #ffa1a1;
+    /* black overlay */
+    --black-overlay: linear-gradient(to right,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7));
+    /* colour for tick mark */
+    --tick-colour: #dbfdd7;
+    /* colour for cross mark */
+    --cross-colour: #ffd2d2;
+    /* grey colour used for some boxes*/
+    --box-colour-1: #131219;
+    /* light grey used for borders */
+    --border-colour-1: #4d4d4d;
+}
 
 /* general styles */
+
+body {
+    font-family: var(--font);
+    color: white;
+    background-color: var(--background-colour-1);
+}
+
+h1,
+h2 {
+    font-weight: bold;
+}
+
+.vertical-align-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.horizontal-align-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.gradient-text {
+    background-image: -webkit-gradient(linear,
+            right top,
+            left top,
+            from(var(--highlight-colour-1)),
+            to(var(--highlight-colour-2)));
+    background-image: -o-linear-gradient(right,
+            var(--highlight-colour-1),
+            var(--highlight-colour-2));
+    background-image: linear-gradient(to left,
+            var(--highlight-colour-1),
+            var(--highlight-colour-2));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
 
 .hidden {
     display: none;
 }
 
 /* header */
-
 #header {
-    margin-top: 56px;
+    /* margin top only needs 56 pixels to clear the navbar, adding extra here for spacing between elements */
+    margin-top: 70px;
+}
+
+.header-title-text {
+    font-weight: 700;
 }
 
 .header-text {
-    color: red;
+    font-size: 1.4rem;
+}
+
+/* home page */
+.home-about-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    /* padding: 14px; */
+}
+
+.home-about-title {
+    text-align: center;
+}
+
+.home-about-text {
+    color: white;
+}
+
+.home-question-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    /* padding: 14px; */
+}
+
+.home-question-title {
+    text-align: center;
+}
+
+.home-question-text {
+    color: white
+}
+
+/* buttons */
+.home-page-button {
+    background-color: var(--highlight-colour-1);
+    color: var(--box-colour-1);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.home-page-button:hover {
+    border: 2px solid var(--highlight-colour-2);
+    background-color: var(--highlight-colour-2);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+/* media queries */
+
+/* fix navbar font being too large on a very specific couple of screen sizes */
+@media screen and (max-width: 1111px) {
+
+    .navbar-nav {
+        font-size: 0.8rem;
+    }
+    
+}
+
+/* large screen sizes and below */
+@media screen and (max-width: 992px) {
+    
+    .navbar-nav {
+        font-size: 1rem;
+    }
+    
 }

@@ -8,15 +8,47 @@
 <header id="header" class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 text-center">
-            <h1 class="display-3">Maths Planet</h1>
-            <p class="header-text">A collection of maths questions.<br>Collected for the planet.</p>
+            <h1 class="display-3 gradient-text header-title-text">Planet Maths</h1>
+            <p class="header-text">Maths questions, from those all over the globe.</p>
         </div>
     </div>
 </header>
 
 <!-- main content -->
 <main>
-    <p>this is where the home page content would go, if i had any.</p>
+    <!-- cards for links to other parts of the website -->
+    <div id="home-area" class="container">
+        <div class="row justify-content-center gx-5">
+            <!-- small about section -->
+            <div class="col-12 col-lg-6">
+                <div class="card home-about-box">
+                    <div class="card-body">
+                        <h2 class="card-title display-6 home-about-title gradient-text">About</h2>
+                        <p class="card-text home-about-text">Planet Maths is a website created with the goal of sharing a wide variety of
+                    maths questions, for people looking to help practice for exams, engage in puzzle solving, or perhaps
+                    just for fun! Click below to read more about the website, and its current + planned features on our about page!</p>
+                        <div class="col-12 text-center">
+                            <a href="{% url 'about_page' %}" class="btn ms-lg-3 home-page-button">About</a>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="card home-question-box">
+                    <div class="card-body">
+                        <h2 class="card-title display-6 home-question-title gradient-text">Search Questions</h2>
+                        <p class="card-text home-question-text">Click the button below to search our questions database!</p>
+                        <div class="col-12 text-center">
+                            <a href="{% url 'question_page' %}" class="btn ms-lg-3 home-page-button">Questions</a>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- <h2 class="display-6 home-question-title gradient-text">Search Questions</h2>
+                <p class="home-question-text mb-0">Click the button below to search our questions database!</p> -->
+            </div>
+        </div>
+    </div>
 </main>
 
 {% endblock %}

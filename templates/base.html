@@ -30,7 +30,7 @@
     <!-- navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home_page' %}">Maths Planet</a>
+            <a class="navbar-brand" href="{% url 'home_page' %}">Planet Maths</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,9 +53,6 @@
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <div class="nav-link">Logged in as {{ user }}</div>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link {% if request.path == manage_questions_url %}active" aria-current="page{% endif %}"
                             href="{% url 'manage_questions_page' %}">Your Questions</a>
                     </li>
@@ -66,6 +63,9 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                                        <li class="nav-item">
+                        <div class="nav-link">Logged in as {{ user }}</div>
                     </li>
                     {% else %}
                     <li class="nav-item">
