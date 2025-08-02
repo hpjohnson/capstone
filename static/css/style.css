@@ -127,7 +127,7 @@ h2 {
     border-radius: 10px;
     background-color: var(--box-colour-1);
     margin: 10px;
-    /* padding: 14px; */
+
 }
 
 .home-about-title {
@@ -143,7 +143,7 @@ h2 {
     border-radius: 10px;
     background-color: var(--box-colour-1);
     margin: 10px;
-    /* padding: 14px; */
+
 }
 
 .home-question-title {
@@ -152,6 +152,20 @@ h2 {
 
 .home-question-text {
     color: white
+}
+
+/* about page */
+.about-page-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+
+}
+
+.about-date-updated-text {
+    text-align: right;  
+    font-weight: 700;  
 }
 
 /* footer */
