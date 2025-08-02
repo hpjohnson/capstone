@@ -1,10 +1,359 @@
-/* fonts */
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /* variables */
+:root {
+    --font: "IBM Plex Mono", sans-serif;
+    /* dark blue background */
+    --background-colour-1: #060018;
+    /* highlight blue */
+    --highlight-colour-1: #85c7f2;
+    /* highlight green */
+    --highlight-colour-2: #c3e8bd;
+    /* grey colour used for some boxes*/
+    --box-colour-1: #131219;
+    /* slightly lighter grey for the boxes */
+    --box-colour-2: #1e1c27;
+    /* light grey used for borders */
+    --border-colour-1: #4d4d4d;
+    /* off white grey used for some text */
+    --unfocus-text-1: #a3a3a3;
+    /* colours used for difficulties */
+    --easy: #b1fca2;
+    --medium: #f7ff86;
+    --hard: #fcd47f;
+    --insane: #ff8d8d;
+
+}
 
 /* general styles */
 
+body {
+    font-family: var(--font);
+    color: white;
+    background-color: var(--background-colour-1);
+}
+
+h1,
+h2 {
+    font-weight: bold;
+}
+
+.vertical-align-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.horizontal-align-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.flex-align-right {
+    text-align: right;
+}
+
+.gradient-text {
+    background-image: -webkit-gradient(linear,
+            right top,
+            left top,
+            from(var(--highlight-colour-1)),
+            to(var(--highlight-colour-2)));
+    background-image: -o-linear-gradient(right,
+            var(--highlight-colour-1),
+            var(--highlight-colour-2));
+    background-image: linear-gradient(to left,
+            var(--highlight-colour-1),
+            var(--highlight-colour-2));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.hidden {
+    display: none;
+}
+
+/* navbar */
+#navbar {
+    background-color: var(--box-colour-1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.logged-in-text {
+    font-weight: 500;
+    color: white;
+}
+
+/* ok - this fix for the logged in text changing colour on hover is stupid, but it DOES work */
+.logged-in-text:hover {
+    color: white;
+}
+
 /* header */
+#header {
+    /* margin top only needs 56 pixels to clear the navbar, adding extra here for spacing between elements */
+    margin-top: 70px;
+}
+
+.header-title-text {
+    font-weight: 700;
+}
+
 .header-text {
-    color: red;
+    font-size: 1.4rem;
+}
+
+/* home page */
+.home-about-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+
+}
+
+.home-about-title {
+    text-align: center;
+}
+
+.home-about-text {
+    color: white;
+}
+
+.home-question-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+
+}
+
+.home-question-title {
+    text-align: center;
+}
+
+.home-question-text {
+    color: white
+}
+
+/* about page */
+.about-page-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+
+}
+
+.about-date-updated-text {
+    text-align: right;  
+    font-weight: 700;  
+}
+
+/* questions page */
+.questions-header {
+    margin-bottom: 14px;
+}
+
+.question-card-box {
+    margin-bottom: 25px;
+}
+
+.question-card {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+}
+
+.question-card-body {
+    background-color: var(--box-colour-1);
+}
+
+.question-card-footer {
+    background-color: var(--box-colour-2);
+}
+
+.question-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.question-subtitle {
+    color: var(--unfocus-text-1);
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.question-summary {
+    color: white;
+}
+
+.question-card-footer {
+    color: white;
+    font-weight: 700;
+}
+
+.question-easy {
+    color: var(--easy);
+}
+
+.question-medium {
+    color: var(--medium);
+}
+
+.question-hard {
+    color: var(--hard);
+}
+
+.question-insane {
+    color: var(--insane);
+}
+
+.question-none {
+    color: white;
+}
+
+.question-view-modal {
+    background-color: var(--box-colour-1);
+    border: 5px solid var(--border-colour-1);
+}
+
+.question-view-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.question-view-difficulty {
+    font-weight: 700;
+}
+
+.question-view-content {
+    color: white;
+}
+
+.question-view-extra-information {
+    color: var(--unfocus-text-1);
+}
+
+.question-view-subtitle {
+    text-align: right;
+}
+
+/* footer */
+
+#footer {
+    background-color: var(--box-colour-1);
+    padding-top: 14px;
+}
+
+.footer-title-text {
+    font-weight: 700;
+}
+
+.footer-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin: 10px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.footer-icon:hover {
+    color: var(--highlight-colour-2);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+/* buttons */
+.home-page-button {
+    background-color: var(--highlight-colour-1);
+    color: var(--box-colour-1);
+    font-weight: 700;
+    font-size: 1.2rem;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.home-page-button:hover {
+    border: 2px solid var(--highlight-colour-2);
+    background-color: var(--highlight-colour-2);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+/* media queries */
+
+/* fix navbar font being too large on a very specific couple of screen sizes */
+@media screen and (max-width: 1111px) {
+
+    .navbar-nav {
+        font-size: 0.8rem;
+    }
+    
+}
+
+/* large screen sizes and below */
+@media screen and (max-width: 992px) {
+    
+    .navbar-nav {
+        font-size: 1rem;
+    }
+    
+}
+
+/* large and above */
+@media screen and (min-width: 992px) {
+
+    /* fix home page card heights */
+    .home-question-box {
+        padding-bottom: 144px;
+    }
+}
+
+/* xl and above */
+@media screen and (min-width: 1200px) {
+    
+    /* fix home page card heights */
+    .home-question-box {
+        padding-bottom: 96px;
+    }
+
+}
+
+/* xxl and above */
+@media screen and (min-width: 1400px) {
+
+    /* fix home page card heights */
+    .home-question-box {
+        padding-bottom: 120px;
+    }
 }
