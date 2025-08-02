@@ -10,22 +10,20 @@
     --highlight-colour-1: #85c7f2;
     /* highlight green */
     --highlight-colour-2: #c3e8bd;
-    /* correct green */
-    --correct-green: #9cdd92;
-    /* incorrect red */
-    --incorrect-red: #ffa1a1;
-    /* black overlay */
-    --black-overlay: linear-gradient(to right,
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7));
-    /* colour for tick mark */
-    --tick-colour: #dbfdd7;
-    /* colour for cross mark */
-    --cross-colour: #ffd2d2;
     /* grey colour used for some boxes*/
     --box-colour-1: #131219;
+    /* slightly lighter grey for the boxes */
+    --box-colour-2: #1e1c27;
     /* light grey used for borders */
     --border-colour-1: #4d4d4d;
+    /* off white grey used for some text */
+    --unfocus-text-1: #a3a3a3;
+    /* colours used for difficulties */
+    --easy: #b1fca2;
+    --medium: #f7ff86;
+    --hard: #fcd47f;
+    --insane: #ff8d8d;
+
 }
 
 /* general styles */
@@ -65,6 +63,10 @@ h2 {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+}
+
+.flex-align-right {
+    text-align: right;
 }
 
 .gradient-text {
@@ -166,6 +168,94 @@ h2 {
 .about-date-updated-text {
     text-align: right;  
     font-weight: 700;  
+}
+
+/* questions page */
+.questions-header {
+    margin-bottom: 14px;
+}
+
+.question-card-box {
+    margin-bottom: 25px;
+}
+
+.question-card {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+}
+
+.question-card-body {
+    background-color: var(--box-colour-1);
+}
+
+.question-card-footer {
+    background-color: var(--box-colour-2);
+}
+
+.question-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.question-subtitle {
+    color: var(--unfocus-text-1);
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.question-summary {
+    color: white;
+}
+
+.question-card-footer {
+    color: white;
+    font-weight: 700;
+}
+
+.question-easy {
+    color: var(--easy);
+}
+
+.question-medium {
+    color: var(--medium);
+}
+
+.question-hard {
+    color: var(--hard);
+}
+
+.question-insane {
+    color: var(--insane);
+}
+
+.question-none {
+    color: white;
+}
+
+.question-view-modal {
+    background-color: var(--box-colour-1);
+    border: 5px solid var(--border-colour-1);
+}
+
+.question-view-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.question-view-difficulty {
+    font-weight: 700;
+}
+
+.question-view-content {
+    color: white;
+}
+
+.question-view-extra-information {
+    color: var(--unfocus-text-1);
+}
+
+.question-view-subtitle {
+    text-align: right;
 }
 
 /* footer */

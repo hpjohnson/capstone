@@ -1,21 +1,5 @@
-// html for the modal
-const MODALHTML = `
-                <div class="modal-header">
-                    <h2 id="question-view-modal-label" class="display-6 modal-title">{TITLE}</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>{CREATEDBY}</p>
-                    <p>{DIFFICULTY}</p>
-                    <p>{CONTENT}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                </div>`;
-
-
 /**
- * only run on page load
+ * run on page load
  */
 document.addEventListener("DOMContentLoaded", function () {
     
@@ -35,37 +19,62 @@ function viewQuestion() {
         questionButton.addEventListener("click", function () {
             
             // get the question card
-            const questionCard = this.parentElement.parentElement;
-            // get the content from the card
-            const questionTitle = questionCard.getElementsByClassName("question-title")[0].textContent;
-            const questionSubtitle = questionCard.getElementsByClassName("question-subtitle")[0].textContent;
-            const questionSummary = questionCard.getElementsByClassName("question-summary")[0].textContent;
-            const questionContent = questionCard.getElementsByClassName("question-content")[0].textContent;
-            let questionDifficulty = questionCard.getElementsByClassName("question-difficulty")[0].textContent;
-            switch (questionDifficulty) {
-                case "-1":
-                    questionDifficulty = "None Specified";
-                case "0":
-                    questionDifficulty = "Easy";
-                case "1":
-                    questionDifficulty = "Medium";
-                case "2":
-                    questionDifficulty = "Hard";
-                case "3":
-                    questionDifficulty = "Insane"; 
-            }
-            const questionCreatedOn = questionCard.getElementsByClassName("question-created-on")[0].textContent;
-            const questionUpdatedOn = questionCard.getElementsByClassName("question-updated-on")[0].textContent;
-            const questionUpdateCount = questionCard.getElementsByClassName("question-updated-on")[0].textContent;
-            const questionID = questionCard.getAttribute("data-id");
-
-            // get the modal
-            const questionModal = document.getElementById("question-view-modal-content");
-            // set and replace the content
-            questionModal.innerHTML = MODALHTML.replace("{TITLE}", questionTitle).replace("{CREATEDBY}", questionSubtitle).replace("{DIFFICULTY}", questionDifficulty).replace("{CONTENT}", questionContent);
+            const questionCard = this.parentElement.parentElement.parentElement;
             
+            // get the content from the card
+            // const questionTitle = questionCard.getElementsByClassName("question-title")[0].textContent;
+            // const questionSubtitle = questionCard.getElementsByClassName("question-subtitle")[0].textContent;
+            // const questionSummary = questionCard.getElementsByClassName("question-summary")[0].textContent;
+            // const questionContent = questionCard.getElementsByClassName("question-content")[0].textContent;
+            // const questionDifficulty = questionCard.getElementsByClassName("difficulty")[0].textContent;
+            const questionTitle = questionCard.querySelector(".question-title").textContent;
+            const questionSubtitle = questionCard.querySelector(".question-subtitle").textContent;
+            const questionContent = questionCard.querySelector(".question-content").textContent;
+            const questionDifficulty = questionCard.querySelector(".question-difficulty").textContent;
 
-            //console.log(questionTitle);
+            // get the content from the data attributes
+            const questionDateCreated = questionCard.getAttribute("data-created-on");
+            const questionDateUpdated = questionCard.getAttribute("data-last-updated");
+            const questionUpdateCount = questionCard.getAttribute("data-update-count");
+
+            // set data in the modal
+            document.querySelector(".question-view-title").innerHTML = questionTitle;
+            document.querySelector(".question-view-subtitle").innerHTML = questionSubtitle;
+            document.querySelector(".question-view-difficulty").innerHTML = questionDifficulty
+            document.querySelector(".question-view-content").innerHTML = questionContent;
+            document.querySelector(".question-view-date-created").innerHTML = `Date Posted: ${questionDateCreated}`;
+            document.querySelector(".question-view-date-updated").innerHTML = `Last Update: ${questionDateUpdated}`;
+            document.querySelector(".question-view-update-count").innerHTML = `Update Count: ${questionUpdateCount}`;
+
+            // set the correct class for the difficulty
+            const questionDifficultyElement = document.querySelector(".question-view-difficulty");
+
+            // list of classes
+            const DIFFICULTYCLASSLIST = ["question-easy", "question-medium", "question-hard", "question-insane", "question-none"];
+
+            // remove the class
+            for (difficulty of DIFFICULTYCLASSLIST) {
+                questionDifficultyElement.classList.remove(`${difficulty}`);
+            }
+
+            // add the correct class
+            switch (questionCard.getAttribute("data-difficulty")) {
+                case "-1":
+                    questionDifficultyElement.classList.add(`question-none`);
+                    break;
+                case "0":
+                    questionDifficultyElement.classList.add(`question-easy`);
+                    break;
+                case "1":
+                    questionDifficultyElement.classList.add(`question-medium`);
+                    break;
+                case "2":
+                    questionDifficultyElement.classList.add(`question-hard`);
+                    break;
+                case "3":
+                    questionDifficultyElement.classList.add(`question-insane`);
+                    break;
+            }         
 
         })
 
