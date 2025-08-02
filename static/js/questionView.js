@@ -22,11 +22,6 @@ function viewQuestion() {
             const questionCard = this.parentElement.parentElement.parentElement;
             
             // get the content from the card
-            // const questionTitle = questionCard.getElementsByClassName("question-title")[0].textContent;
-            // const questionSubtitle = questionCard.getElementsByClassName("question-subtitle")[0].textContent;
-            // const questionSummary = questionCard.getElementsByClassName("question-summary")[0].textContent;
-            // const questionContent = questionCard.getElementsByClassName("question-content")[0].textContent;
-            // const questionDifficulty = questionCard.getElementsByClassName("difficulty")[0].textContent;
             const questionTitle = questionCard.querySelector(".question-title").textContent;
             const questionSubtitle = questionCard.querySelector(".question-subtitle").textContent;
             const questionContent = questionCard.querySelector(".question-content").textContent;
