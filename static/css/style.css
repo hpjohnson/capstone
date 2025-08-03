@@ -90,6 +90,26 @@ h2 {
     display: none;
 }
 
+.link-text {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--highlight-colour-1);
+    border: 2px solid var(--highlight-colour-1);
+    border-radius: 10px;
+    padding: 5px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.link-text:hover {
+    color: var(--highlight-colour-2);
+    border: 2px solid var(--highlight-colour-2);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
 /* navbar */
 #navbar {
     background-color: var(--box-colour-1);
@@ -258,6 +278,16 @@ h2 {
     text-align: right;
 }
 
+/* signup page */
+
+.signup-page-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    padding: 14px;
+}
+
 /* footer */
 
 #footer {
@@ -302,6 +332,7 @@ h2 {
 .home-page-button:hover {
     border: 2px solid var(--highlight-colour-2);
     background-color: var(--highlight-colour-2);
+    color: var(--box-colour-1);
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
