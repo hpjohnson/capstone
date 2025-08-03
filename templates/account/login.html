@@ -9,10 +9,10 @@
 <!-- header -->
 <header id="header" class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-6 text-center">
-            <h1 id="signin-title" class="display-3">Sign In</h1>
-            <p>Welcome back to Planet Maths. To access site features, please log in. If
-                you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+        <div class="col-12 text-center">
+            <h1 id="signin-title" class="display-3 gradient-text header-title-text">Sign In</h1>
+            <p class="header-text">Welcome back to Planet Maths. To access site features, please log in. If
+                you have not created an account yet, then <a class="link-text link-button" href="{{ signup_url }}">sign up</a>
                 first.</p>
         </div>
     </div>
@@ -21,14 +21,14 @@
 <!-- main content -->
 <main class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-6 text-center">
+        <div class="col-12 col-lg-6 signin-page-box">
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn" type="submit">{% trans "Sign In" %}</button>
+                <button class="btn ms-lg-3 home-page-button" type="submit">{% trans "Sign In" %}</button>
             </form>
         </div>
     </div>
