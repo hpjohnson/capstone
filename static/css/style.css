@@ -298,6 +298,15 @@ h2 {
     padding: 14px;
 }
 
+/* sign out page */
+.signout-page-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    padding: 14px;
+}
+
 /* footer */
 
 #footer {
