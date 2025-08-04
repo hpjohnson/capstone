@@ -14,7 +14,7 @@ class QuestionCreateForm(forms.ModelForm):
     summary = forms.CharField(label="Summary", max_length=200)
     content = forms.CharField(label="Content", widget=forms.Textarea)
     difficulty = forms.ChoiceField(choices=DIFFICULTY, label="Difficulty")
-    status = forms.ChoiceField(choices=STATUS, label="Save or Submit?")
+    approved = forms.ChoiceField(choices=STATUS, label="Save or Submit?")
 
     # add classes for styling
     title.widget.attrs.update({"placeholder": "Title"})
@@ -23,4 +23,4 @@ class QuestionCreateForm(forms.ModelForm):
 
     class Meta:
         model = Question
-        fields = ["title", "summary", "content", "difficulty", "status", ]
+        fields = ["title", "summary", "content", "difficulty", "approved", ]

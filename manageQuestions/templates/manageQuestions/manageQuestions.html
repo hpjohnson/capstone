@@ -104,7 +104,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title gradient-text">Create Question</h5>
                 </div>
-                <form class="question-form" action="/create_question/" method="post">
+                <form class="question-form" action="/manage_questions/create_question/" method="post">
                     <div class="modal-body">
                         {% csrf_token %}
                         {{ question_create_form.as_p }}
