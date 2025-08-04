@@ -23,6 +23,11 @@
     --medium: #f7ff86;
     --hard: #fcd47f;
     --insane: #ff8d8d;
+    /* colours used for question status */
+    --draft: #ffffff;
+    --pending: #fcd47f;
+    --approved: #b1fca2;
+    --disapproved: #ff8d8d;
 
 }
 
@@ -305,6 +310,41 @@ h2 {
     background-color: var(--box-colour-1);
     margin: 10px;
     padding: 14px;
+}
+
+/* manage questions page */
+
+.create-question-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    padding: 14px;
+}
+
+.question-approval {
+    border-bottom: 2px solid var(--border-colour-1)
+}
+
+.question-draft {
+    color: var(--draft);
+}
+
+.question-pending-approval {
+    color: var(--pending);
+}
+
+.question-approved {
+    color: var(--approved);
+}
+
+.question-disapproved {
+    color: var(--disapproved);
+}
+
+.question-create-modal {
+    background-color: var(--box-colour-1);
+    border: 5px solid var(--border-colour-1);
 }
 
 /* footer */

@@ -15,24 +15,42 @@
 
 <!-- main content -->
 <main>
-    <div id="questions-container" class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 text-center create-question-box"></div>
+            <div class="col-12 col-md-8 col-lg-6 text-center create-question-box">
+                <button type="button" class="btn ms-lg-3 home-page-button" data-bs-toggle="modal"
+                    data-bs-target="#question-create-modal">Create New Question</button>
+            </div>
         </div>
+    </div>
+    <div id="questions-container" class="container-fluid">
         <div id="questions-row" class="row" data-masonry='{"percentPosition": true}'>
             {% for question in questions %}
-            {% if question.approved == 2 %}
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 question-card-box">
-                <div class="card question-card" data-id="{{ question.questionID }}" data-difficulty="{{ question.difficulty }}" data-created-on="{{ question.dateCreated }}" data-last-updated="{{ question.dateUpdated }}" data-update-count="{{ question.updateCount }}">
+                <div class="card question-card" data-id="{{ question.questionID }}"
+                    data-difficulty="{{ question.difficulty }}" data-created-on="{{ question.dateCreated }}"
+                    data-last-updated="{{ question.dateUpdated }}" data-update-count="{{ question.updateCount }}">
                     <div class="card-body question-card-body">
                         <h5 class="card-title question-title gradient-text">{{ question.title }}</h5>
                         <h6 class="card-subtitle question-subtitle">Posted By: {{ question.userID }}</h6>
                         <p class="question-summary">{{ question.summary }}</p>
                         <p class="hidden question-content">{{ question.content }}</p>
-                        
+
                         <div class="horizontal-align-text">
-                            <button type="button" class="btn btn ms-lg-3 home-page-button question-view-button" data-bs-toggle="modal" data-bs-target="#question-view-modal">View Question</button>
+                            <button type="button" class="btn ms-lg-3 home-page-button question-view-button"
+                                data-bs-toggle="modal" data-bs-target="#question-view-modal">View Question</button>
                         </div>
+                    </div>
+                    <div class="card-footer question-card-footer horizontal-align-text question-approval">
+                        {% if question.approved == 0 %}
+                        <span class="question-draft">Draft</span>
+                        {% elif question.approved == 1 %}
+                        <span class="question-pending-approval">Pending Approval</span>
+                        {% elif question.approved == 2 %}
+                        <span class="question-approved">Approved</span>
+                        {% elif question.approved == 3 %}
+                        <span class="question-disapproved">Disapproved</span>
+                        {% endif %}
                     </div>
                     <div class="card-footer question-card-footer horizontal-align-text question-difficulty">
                         {% if question.difficulty == 0 %}
@@ -48,12 +66,12 @@
                         {% endif %}
                     </div>
                 </div>
-            </div>  
-            {% endif %}
+            </div>
             {% endfor %}
         </div>
     </div>
-    <div id="question-view-modal" class="modal fade" tabindex="-1" aria-labelledby="question-view-modal-label" aria-hidden="true">
+    <div id="question-view-modal" class="modal fade" aria-labelledby="question-view-modal-label"
+        aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-view-modal">
                 <div class="modal-header">
@@ -70,8 +88,21 @@
                     <p class="horizontal-align-text question-view-update-count"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn ms-lg-3 home-page-button question-close-button" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn ms-lg-3 home-page-button question-close-button"
+                        data-bs-dismiss="modal">Close</button>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="question-create-modal" class="modal fade" aria-labelledby="question-create-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content question-create-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title gradient-text">Create Question</h5>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>
@@ -80,6 +111,8 @@
 {% endblock content %}
 
 {% block extra_scripts %}
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
 <script src="{% static 'js/questionView.js' %}"></script>
 {% endblock extra_scripts %}
