@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from question.models import Question
 from .forms import QuestionCreateForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def manage_questions_page_view(request):
 
     # get the users uploaded questions
