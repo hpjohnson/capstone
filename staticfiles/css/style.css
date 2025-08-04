@@ -23,6 +23,11 @@
     --medium: #f7ff86;
     --hard: #fcd47f;
     --insane: #ff8d8d;
+    /* colours used for question status */
+    --draft: #ffffff;
+    --pending: #fcd47f;
+    --approved: #b1fca2;
+    --disapproved: #ff8d8d;
 
 }
 
@@ -88,6 +93,26 @@ h2 {
 
 .hidden {
     display: none;
+}
+
+.link-text {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--highlight-colour-1);
+    border: 2px solid var(--highlight-colour-1);
+    border-radius: 10px;
+    padding: 5px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.link-text:hover {
+    color: var(--highlight-colour-2);
+    border: 2px solid var(--highlight-colour-2);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
 }
 
 /* navbar */
@@ -258,6 +283,74 @@ h2 {
     text-align: right;
 }
 
+/* signup page */
+
+.signup-page-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    padding: 14px;
+}
+
+/* sign in page */
+
+.signin-page-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    padding: 14px;
+}
+
+/* sign out page */
+.signout-page-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    padding: 14px;
+}
+
+/* manage questions page */
+
+.create-question-box {
+    border: 5px solid var(--border-colour-1);
+    border-radius: 10px;
+    background-color: var(--box-colour-1);
+    margin: 10px;
+    padding: 14px;
+}
+
+.question-approval {
+    border-bottom: 2px solid var(--border-colour-1)
+}
+
+.question-draft {
+    color: var(--draft);
+}
+
+.question-pending-approval {
+    color: var(--pending);
+}
+
+.question-approved {
+    color: var(--approved);
+}
+
+.question-disapproved {
+    color: var(--disapproved);
+}
+
+.question-create-modal {
+    background-color: var(--box-colour-1);
+    border: 5px solid var(--border-colour-1);
+}
+
+.question-form {
+    color: white;
+}
+
 /* footer */
 
 #footer {
@@ -302,6 +395,7 @@ h2 {
 .home-page-button:hover {
     border: 2px solid var(--highlight-colour-2);
     background-color: var(--highlight-colour-2);
+    color: var(--box-colour-1);
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
