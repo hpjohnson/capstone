@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 #options for integer fields
 DIFFICULTY = ((-1, "None Specified"), (0, "Easy"), (1, "Medium"), (2, "Hard"), (3, "Insane"))
-STATUS = ((0, "Draft"), (1, "Not Approved"), (2, "Approved"))
+STATUS = ((0, "Draft"), (1, "Pending Approval"), (2, "Approved"), (3, "Disapproved"))
 
 # Create your models here.
 class Question(models.Model):

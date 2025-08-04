@@ -2,44 +2,75 @@
 {% load static %}
 {% block content %}
 
-<!-- question.html content here -->
+<!-- manage question.html content here -->
 
 <!-- header -->
-<header id="header" class="container">
+<header id="header" class="container questions-header">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6 text-center">
-            <h1 class="display-3">Your Questions</h1>
+        <div class="col-12 text-center">
+            <h1 class="display-3 gradient-text header-title-text">Your Questions</h1>
         </div>
     </div>
 </header>
 
 <!-- main content -->
-<main class="container">
+<main>
     <div id="questions-container" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center create-question-box"></div>
+        </div>
         <div id="questions-row" class="row" data-masonry='{"percentPosition": true}'>
             {% for question in questions %}
-            <div class="card col-12 col-md-6 col-lg-4 col-xl-3" data-id="{{ question.questionID }}">
-                <div class="card-body">
-                    <h5 class="display-5 card-title question-title">{{ question.title }}</h5>
-                    <h6 class="display-6 card-subtitle question-subtitle">Created By {{ question.userID }}</h6>
-                    <p class="question-summary">{{ question.summary }}</p>
-                    <p class="hidden question-content">{{ question.content }}</p>
-                    <button type="button" class="btn btn-primary question-view-button" data-bs-toggle="modal" data-bs-target="#question-view-modal">View Question</button>
+            {% if question.approved == 2 %}
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 question-card-box">
+                <div class="card question-card" data-id="{{ question.questionID }}" data-difficulty="{{ question.difficulty }}" data-created-on="{{ question.dateCreated }}" data-last-updated="{{ question.dateUpdated }}" data-update-count="{{ question.updateCount }}">
+                    <div class="card-body question-card-body">
+                        <h5 class="card-title question-title gradient-text">{{ question.title }}</h5>
+                        <h6 class="card-subtitle question-subtitle">Posted By: {{ question.userID }}</h6>
+                        <p class="question-summary">{{ question.summary }}</p>
+                        <p class="hidden question-content">{{ question.content }}</p>
+                        
+                        <div class="horizontal-align-text">
+                            <button type="button" class="btn btn ms-lg-3 home-page-button question-view-button" data-bs-toggle="modal" data-bs-target="#question-view-modal">View Question</button>
+                        </div>
+                    </div>
+                    <div class="card-footer question-card-footer horizontal-align-text question-difficulty">
+                        {% if question.difficulty == 0 %}
+                        <span class="question-easy">Easy</span>
+                        {% elif question.difficulty == 1 %}
+                        <span class="question-medium">Medium</span>
+                        {% elif question.difficulty == 2 %}
+                        <span class="question-hard">Hard</span>
+                        {% elif question.difficulty == 3 %}
+                        <span class="question-insane">Insane</span>
+                        {% else %}
+                        <span class="question-none">No Difficulty Given</span>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <span class="difficulty question-difficulty">Difficulty - {{ question.difficulty }}</span>
-                    <span class="created-on question-created-on">Created On - {{ question.dateCreated }}</span>
-                    <span class="updated-on question-updated-on">Last Updated - {{ question.dateUpdated }}</span>
-                    <span class="update-count quesion-update-count">Times Updated - {{ question.updateCount }}</span>
-                </div>
-            </div>
+            </div>  
+            {% endif %}
             {% endfor %}
         </div>
     </div>
     <div id="question-view-modal" class="modal fade" tabindex="-1" aria-labelledby="question-view-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div id="question-view-modal-content" class="modal-header">
+            <div class="modal-content question-view-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title question-view-title gradient-text"></h5>
+                </div>
+                <div class="modal-body">
+                    <p class="question-view-difficulty horizontal-align-text"></p>
+                    <p class="question-view-content">a</p>
+                </div>
+                <div class="modal-body question-view-extra-information">
+                    <p class="horizontal-align-text question-view-subtitle"></p>
+                    <p class="horizontal-align-text question-view-date-created"></p>
+                    <p class="horizontal-align-text question-view-date-updated"></p>
+                    <p class="horizontal-align-text question-view-update-count"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn ms-lg-3 home-page-button question-close-button" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
