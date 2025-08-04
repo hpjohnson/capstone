@@ -347,6 +347,10 @@ h2 {
     border: 5px solid var(--border-colour-1);
 }
 
+.question-form {
+    color: white;
+}
+
 /* footer */
 
 #footer {
