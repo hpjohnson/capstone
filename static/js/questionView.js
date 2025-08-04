@@ -76,7 +76,9 @@ function viewQuestion() {
             }  
             
             // stop the edit window being clickable until a question is clicked
-            setEditData()
+            setEditData();
+            // stop the delete button being clickable until a question is clicked
+            deleteQuestion();
 
         })
     }
@@ -132,6 +134,25 @@ function setEditData() {
 
         // set the form action
         questionEditModal.querySelector(".question-form").setAttribute("action", `/manage_questions/edit_question/${questionID}/`);
+    })
+
+}
+
+/**
+ * add event listener to delete button and set the id so that the question may be deleted
+ */
+function deleteQuestion() {
+
+    const deleteButton = document.querySelector(".question-delete-button");
+
+    deleteButton.addEventListener("click", function() {
+
+        // get the question id
+        questionID = document.querySelector(".question-view-id").getAttribute("data-id");
+
+        // create the correct link
+        document.getElementById("delete-question").setAttribute("href", `/manage_questions/delete_question/${questionID}/`);
+    
     })
 
 }

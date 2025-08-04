@@ -28,6 +28,8 @@
     --pending: #fcd47f;
     --approved: #b1fca2;
     --disapproved: #ff8d8d;
+    /* warning colour */
+    --warning: #ff3e3e;
 
 }
 
@@ -351,6 +353,12 @@ h2 {
     color: white;
 }
 
+.delete-warning {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--warning);
+}
+
 /* footer */
 
 #footer {
@@ -396,6 +404,53 @@ h2 {
     border: 2px solid var(--highlight-colour-2);
     background-color: var(--highlight-colour-2);
     color: var(--box-colour-1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.home-page-button:hover:active {
+    border: 2px solid white;
+    background-color: var(--box-colour-2);
+    color: white;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.delete-question-button {
+    border: 2px solid var(--warning);
+    background-color: var(--warning);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.delete-question-button:hover {
+    border: 2px solid white;
+    background-color: white;
+    color: var(--warning);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.delete-question-button:hover:active {
+    border: 2px solid white;
+    background-color: var(--box-colour-2);
+    color: white;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);

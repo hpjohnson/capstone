@@ -58,3 +58,19 @@ def edit_question_view(request, question_id):
             question.save()
 
     return HttpResponseRedirect(reverse("manage_questions_page"))
+
+@login_required
+def delete_question_view(request, question_id):
+    """
+    view to delete question
+    """
+
+    # get the question
+    question = get_object_or_404(Question, pk=question_id)
+
+    # delete
+    if question.userID == request.user:
+        question.delete()
+
+
+    return HttpResponseRedirect(reverse("manage_questions_page"))

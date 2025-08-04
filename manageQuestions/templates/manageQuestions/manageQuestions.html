@@ -94,7 +94,7 @@
                         data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn ms-lg-3 home-page-button question-edit-button" data-bs-toggle="modal" data-bs-target="#question-edit-modal">Edit
                         Question</button>
-                    <button type="button" class="btn ms-lg-3 home-page-button question-delete-button">Delete
+                    <button type="button" class="btn ms-lg-3 home-page-button question-delete-button" data-bs-toggle="modal" data-bs-target="#question-delete-modal">Delete
                         Question</button>
 
                 </div>
@@ -119,12 +119,11 @@
             </div>
         </div>
     </div>
-    <div id="question-edit-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboad="false" aria-labelledby="question-edit-modal-label" aria-hidden="true">
+    <div id="question-edit-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="question-edit-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-create-modal">
                 <div class="modal-header">
                     <h5 class="modal-title gradient-text">Edit Question</h5>
-                    <p class="testingthis"></p>
                 </div>
                 <form class="question-form" method="post">
                     <div class="modal-body">
@@ -134,11 +133,28 @@
                     <div class="modal-footer">
                         <input type="submit" class="btn ms-lg-3 home-page-button" value="Submit">
                         <button type="button" class="btn ms-lg-3 home-page-button" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn ms-lg-3 home-page-button" data-bs-toggle="modal" data-bs-target="#question-view-modal">Cancel</button>
                     </div>
                 </form>
             </div>
         </div>
-
+    </div>
+    <div id="question-delete-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="question-delete-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content question-create-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title gradient-text">Delete Question</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="horizontal-align-text text-white">Are you sure you want to delete this question?</p>
+                    <p class="horizontal-align-text delete-warning">This cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn ms-lg-3 home-page-button" data-bs-toggle="modal" data-bs-target="#question-view-modal">Cancel</button>
+                    <a id="delete-question" href="#"><button type="button" class="btn ms-lg-3 delete-question-button">Delete</button></a>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
