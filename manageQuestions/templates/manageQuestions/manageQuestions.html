@@ -85,11 +85,12 @@
                     <p class="horizontal-align-text question-view-date-created"></p>
                     <p class="horizontal-align-text question-view-date-updated"></p>
                     <p class="horizontal-align-text question-view-update-count"></p>
+                    <p class="hidden question-view-id" data-id=""></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn ms-lg-3 home-page-button question-close-button"
                         data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn ms-lg-3 home-page-button question-edit-button">Edit
+                    <button type="button" class="btn ms-lg-3 home-page-button question-edit-button" data-bs-toggle="modal" data-bs-target="#question-edit-modal">Edit
                         Question</button>
                     <button type="button" class="btn ms-lg-3 home-page-button question-delete-button">Delete
                         Question</button>
@@ -115,6 +116,26 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div id="question-edit-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboad="false" aria-labelledby="question-edit-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content question-create-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title gradient-text">Edit Question</h5>
+                </div>
+                <form class="question-form" method="post">
+                    <div class="modal-body">
+                        {% csrf_token %}
+                        {{ question_edit_form.as_p }}
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn ms-lg-3 home-page-button" value="Submit">
+                        <button type="button" class="btn ms-lg-3 home-page-button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
 </main>
 

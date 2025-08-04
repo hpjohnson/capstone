@@ -12,10 +12,13 @@ def manage_questions_page_view(request):
     # get the users uploaded questions
     questions = Question.objects.filter(userID=request.user)
     
-    # create the form
+    # create the form for creating questions
     question_create_form = QuestionCreateForm()
 
-    return render(request, "manageQuestions/manageQuestions.html", {"questions": questions, "question_create_form": question_create_form}, )
+    #create the form for editing questions (can use the same form model)
+    question_edit_form = QuestionCreateForm()
+
+    return render(request, "manageQuestions/manageQuestions.html", {"questions": questions, "question_create_form": question_create_form, "question_edit_form": question_edit_form}, )
 
 @login_required
 def create_question_view(request):

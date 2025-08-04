@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 /**
- * add event listeners and functionality to all buttons
+ * add event listeners and functionality to all view buttons
  */
 function viewQuestion() {
 
@@ -28,6 +28,7 @@ function viewQuestion() {
             const questionDifficulty = questionCard.querySelector(".question-difficulty").textContent;
 
             // get the content from the data attributes
+            const questionID = questionCard.getAttribute("data-id");
             const questionDateCreated = questionCard.getAttribute("data-created-on");
             const questionDateUpdated = questionCard.getAttribute("data-last-updated");
             const questionUpdateCount = questionCard.getAttribute("data-update-count");
@@ -40,6 +41,7 @@ function viewQuestion() {
             document.querySelector(".question-view-date-created").innerHTML = `Date Posted: ${questionDateCreated}`;
             document.querySelector(".question-view-date-updated").innerHTML = `Last Update: ${questionDateUpdated}`;
             document.querySelector(".question-view-update-count").innerHTML = `Update Count: ${questionUpdateCount}`;
+            document.querySelector(".question-view-id").setAttribute("data-id", questionID)
 
             // set the correct class for the difficulty
             const questionDifficultyElement = document.querySelector(".question-view-difficulty");
@@ -74,5 +76,31 @@ function viewQuestion() {
         })
 
     }
+
+}
+
+/**
+ * add event listener to the edit buttons, and set the data in the form
+ */
+function setEditData() {
+
+    const editButton = document.querySelector(".question-edit-button");
+
+    editButton.addEventListener("click", function() {
+
+        // get data from the question
+        // not all of this is used for now, but it will be when a preview is added.
+        const questionTitle = document.querySelector(".question-view-title");
+        const questionSubtitle = document.querySelector(".question-view-subtitle");
+        const questionContent = document.querySelector(".question-view-content");
+        const questionDifficulty = document.querySelector(".question-view-difficulty");
+        const questionDateCreated = document.querySelector(".question-view-date-created");
+        const questionDateUpdated = document.querySelector(".question-view-date-updated");
+        const questionUpdateCount = document.querySelector(".question-view-update-count");
+        const questionID = document.querySelector(".question-view-id").getAttribute("data-id");
+
+
+
+    })
 
 }
