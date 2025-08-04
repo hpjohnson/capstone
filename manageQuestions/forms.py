@@ -17,9 +17,10 @@ class QuestionCreateForm(forms.ModelForm):
     approved = forms.ChoiceField(choices=STATUS, label="Save or Submit?")
 
     # add classes for styling
-    title.widget.attrs.update({"placeholder": "Title"})
-    summary.widget.attrs.update({"placeholder": "Summary"})
-    content.widget.attrs.update({"placeholder": "Content"})
+    title.widget.attrs.update({"placeholder": "Title", "class": "question-edit-title"})
+    summary.widget.attrs.update({"placeholder": "Summary", "class": "question-edit-summary"})
+    content.widget.attrs.update({"placeholder": "Content", "class": "question-edit-content"})
+    difficulty.widget.attrs.update({"class": "question-edit-difficulty"})
 
     class Meta:
         model = Question
