@@ -70,8 +70,7 @@
             {% endfor %}
         </div>
     </div>
-    <div id="question-view-modal" class="modal fade" aria-labelledby="question-view-modal-label"
-        aria-hidden="true">
+    <div id="question-view-modal" class="modal fade" aria-labelledby="question-view-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-view-modal">
                 <div class="modal-header">
@@ -90,18 +89,22 @@
                 <div class="modal-footer">
                     <button type="button" class="btn ms-lg-3 home-page-button question-close-button"
                         data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn ms-lg-3 home-page-button question-edit-button">Edit
+                        Question</button>
+                    <button type="button" class="btn ms-lg-3 home-page-button question-delete-button">Delete
+                        Question</button>
+
                 </div>
             </div>
         </div>
     </div>
-    <div id="question-create-modal" class="modal fade" aria-labelledby="question-create-modal-label"
-        aria-hidden="true">
+    <div id="question-create-modal" class="modal fade" aria-labelledby="question-create-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-create-modal">
                 <div class="modal-header">
                     <h5 class="modal-title gradient-text">Create Question</h5>
                 </div>
-                <form class="question-form" action="/manage_questions/" method="post">
+                <form class="question-form" action="/create_question/" method="post">
                     <div class="modal-body">
                         {% csrf_token %}
                         {{ question_create_form.as_p }}

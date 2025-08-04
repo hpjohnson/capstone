@@ -12,11 +12,14 @@ def manage_questions_page_view(request):
     # get the users uploaded questions
     questions = Question.objects.filter(userID=request.user)
     
-    # testing stuff, delete this later
-    # print(questions)
-    # print(questions[0].questionID)
+    # create the form
+    question_create_form = QuestionCreateForm()
 
-    #create or process the form
+    return render(request, "manageQuestions/manageQuestions.html", {"questions": questions, "question_create_form": question_create_form}, )
+
+@login_required
+def create_question_view(request):
+
     if request.method == "POST":
         question_create_form = QuestionCreateForm(request.POST)
         if question_create_form.is_valid():
@@ -24,9 +27,6 @@ def manage_questions_page_view(request):
             question.userID = request.user
             question.save()
 
+            return HttpResponseRedirect(reverse("manage_questions_page"))
     else:
-        question_create_form = QuestionCreateForm()
-
-    question_create_form = QuestionCreateForm()
-
-    return render(request, "manageQuestions/manageQuestions.html", {"questions": questions, "question_create_form": question_create_form}, )
+        return HttpResponseRedirect(reverse("manage_questions_page"))
