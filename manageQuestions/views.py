@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from question.models import Question
@@ -8,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def manage_questions_page_view(request):
+    """
+    view that loads the users own questions page
+    """
 
     # get the users uploaded questions
     questions = Question.objects.filter(userID=request.user)
@@ -22,6 +25,9 @@ def manage_questions_page_view(request):
 
 @login_required
 def create_question_view(request):
+    """
+    view that handles the creation of the users own questions
+    """
 
     if request.method == "POST":
         question_create_form = QuestionCreateForm(request.POST)
@@ -33,3 +39,22 @@ def create_question_view(request):
             return HttpResponseRedirect(reverse("manage_questions_page"))
     else:
         return HttpResponseRedirect(reverse("manage_questions_page"))
+    
+@login_required
+def edit_question_view(request, question_id):
+    """
+    view that handles the editing of questions
+    """
+    
+    # get the question
+    question = get_object_or_404(Question, pk=question_id)
+
+    # update the question
+    if request.method == "POST":
+        question_edit_form = QuestionCreateForm(request.POST, instance=question)
+        if question_edit_form.is_valid() and question.userID == request.user:
+            question = question_edit_form.save(commit=False)
+            question.updateCount = question.updateCount + 1
+            question.save()
+
+    return HttpResponseRedirect(reverse("manage_questions_page"))

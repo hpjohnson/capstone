@@ -130,6 +130,8 @@ function setEditData() {
                 break;
         }
 
+        // set the form action
+        questionEditModal.querySelector(".question-form").setAttribute("action", `/manage_questions/edit_question/${questionID}/`);
     })
 
 }
