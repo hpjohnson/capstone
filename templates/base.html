@@ -57,10 +57,6 @@
                             href="{% url 'manage_questions_page' %}">Your Questions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == account_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_management_page' %}">Manage Account</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>

@@ -15,6 +15,7 @@
 
 <!-- main content -->
 <main>
+    <!-- box for the question create button, and any others that may be added -->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6 text-center create-question-box">
@@ -23,6 +24,7 @@
             </div>
         </div>
     </div>
+    <!-- questions container -->
     <div id="questions-container" class="container-fluid">
         <div id="questions-row" class="row" data-masonry='{"percentPosition": true}'>
             {% for question in questions %}
@@ -71,6 +73,7 @@
             {% endfor %}
         </div>
     </div>
+    <!-- modal that allows for viewing the question -->
     <div id="question-view-modal" class="modal fade" aria-labelledby="question-view-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-view-modal">
@@ -101,6 +104,7 @@
             </div>
         </div>
     </div>
+    <!-- modal that allows for creating the question -->
     <div id="question-create-modal" class="modal fade" aria-labelledby="question-create-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-create-modal">
@@ -119,6 +123,7 @@
             </div>
         </div>
     </div>
+    <!-- modal that allows for editing the question -->
     <div id="question-edit-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="question-edit-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-create-modal">
@@ -139,6 +144,7 @@
             </div>
         </div>
     </div>
+    <!-- modal that allows for deleting the question -->
     <div id="question-delete-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="question-delete-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-create-modal">
