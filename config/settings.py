@@ -36,11 +36,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # manual debug override
-#DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com',]
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', ]
 
-CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://.herokuapp.com',]
+CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://.herokuapp.com', ]
 
 
 # Application definition

@@ -1,9 +1,10 @@
 from django import forms
 from question.models import Question
 
-# options 
+# options
 DIFFICULTY = ((0, "Easy"), (1, "Medium"), (2, "Hard"), (3, "Insane"))
 STATUS = ((0, "Save as draft"), (1, "Submit for approval"))
+
 
 # form
 class QuestionCreateForm(forms.ModelForm):
@@ -17,15 +18,19 @@ class QuestionCreateForm(forms.ModelForm):
     approved = forms.ChoiceField(choices=STATUS, label="Save or Submit?")
 
     # add classes for styling
-    title.widget.attrs.update({"placeholder": "Title", "class": "question-edit-title"})
-    summary.widget.attrs.update({"placeholder": "Summary", "class": "question-edit-summary"})
-    content.widget.attrs.update({"placeholder": "Content", "class": "question-edit-content"})
+    title.widget.attrs.update({"placeholder": "Title",
+                               "class": "question-edit-title"})
+    summary.widget.attrs.update({"placeholder": "Summary",
+                                 "class": "question-edit-summary"})
+    content.widget.attrs.update({"placeholder": "Content",
+                                 "class": "question-edit-content"})
     difficulty.widget.attrs.update({"class": "question-edit-difficulty"})
     approved.widget.attrs.update({"class": "question-edit-summary"})
 
     class Meta:
         model = Question
         fields = ["title", "summary", "content", "difficulty", "approved", ]
+
 
 class QuestionEditForm(forms.ModelForm):
     """
@@ -38,11 +43,19 @@ class QuestionEditForm(forms.ModelForm):
     approved = forms.ChoiceField(choices=STATUS, label="Save or Submit?")
 
     # add classes for styling
-    title.widget.attrs.update({"placeholder": "Title", "class": "question-edit-title", "id": "id_title_edit"})
-    summary.widget.attrs.update({"placeholder": "Summary", "class": "question-edit-summary", "id": "id_summary_edit"})
-    content.widget.attrs.update({"placeholder": "Content", "class": "question-edit-content", "id": "id_content_edit"})
-    difficulty.widget.attrs.update({"class": "question-edit-difficulty", "id": "id_difficulty_edit"})
-    approved.widget.attrs.update({"class": "question-edit-summary", "id": "id_approved_edit"})
+    title.widget.attrs.update({"placeholder": "Title",
+                               "class": "question-edit-title",
+                               "id": "id_title_edit"})
+    summary.widget.attrs.update({"placeholder": "Summary",
+                                 "class": "question-edit-summary",
+                                "id": "id_summary_edit"})
+    content.widget.attrs.update({"placeholder": "Content",
+                                 "class": "question-edit-content",
+                                "id": "id_content_edit"})
+    difficulty.widget.attrs.update({"class": "question-edit-difficulty",
+                                    "id": "id_difficulty_edit"})
+    approved.widget.attrs.update({"class": "question-edit-summary",
+                                  "id": "id_approved_edit"})
 
     class Meta:
         model = Question

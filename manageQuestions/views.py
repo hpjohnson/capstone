@@ -5,6 +5,7 @@ from question.models import Question
 from .forms import QuestionCreateForm, QuestionEditForm
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 @login_required
 def manage_questions_page_view(request):
@@ -14,14 +15,18 @@ def manage_questions_page_view(request):
 
     # get the users uploaded questions
     questions = Question.objects.filter(userID=request.user)
-    
+
     # create the form for creating questions
     question_create_form = QuestionCreateForm()
 
-    #create the form for editing questions (can use the same form model)
+    # create the form for editing questions (can use the same form model)
     question_edit_form = QuestionEditForm()
 
-    return render(request, "manageQuestions/manageQuestions.html", {"questions": questions, "question_create_form": question_create_form, "question_edit_form": question_edit_form}, )
+    return render(request, "manageQuestions/manageQuestions.html",
+                  {"questions": questions,
+                   "question_create_form": question_create_form,
+                   "question_edit_form": question_edit_form}, )
+
 
 @login_required
 def create_question_view(request):
@@ -39,13 +44,14 @@ def create_question_view(request):
             return HttpResponseRedirect(reverse("manage_questions_page"))
     else:
         return HttpResponseRedirect(reverse("manage_questions_page"))
-    
+
+
 @login_required
 def edit_question_view(request, question_id):
     """
     view that handles the editing of questions
     """
-    
+
     # get the question
     question = get_object_or_404(Question, pk=question_id)
 
@@ -59,6 +65,7 @@ def edit_question_view(request, question_id):
 
     return HttpResponseRedirect(reverse("manage_questions_page"))
 
+
 @login_required
 def delete_question_view(request, question_id):
     """
@@ -71,6 +78,5 @@ def delete_question_view(request, question_id):
     # delete
     if question.userID == request.user:
         question.delete()
-
 
     return HttpResponseRedirect(reverse("manage_questions_page"))
