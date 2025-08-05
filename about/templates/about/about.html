@@ -20,9 +20,9 @@
         <div class="col-12 about-page-box">
             <div class="row">
                 <div id="about-content" class="col-12">
-                    <p>{{ about.content | safe }}</p>
+                    {{ about.content | safe }}
                 </div>
-                <div id="about-date-updated horizontal-align-text" class="col-12">
+                <div id="about-date-updated" class="col-12">
                     <p class="about-date-updated-text">Last updated: {{ about.updated_on }}</p>
                 </div>
             </div>

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from question.models import Question
-from .forms import QuestionCreateForm
+from .forms import QuestionCreateForm, QuestionEditForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -19,7 +19,7 @@ def manage_questions_page_view(request):
     question_create_form = QuestionCreateForm()
 
     #create the form for editing questions (can use the same form model)
-    question_edit_form = QuestionCreateForm()
+    question_edit_form = QuestionEditForm()
 
     return render(request, "manageQuestions/manageQuestions.html", {"questions": questions, "question_create_form": question_create_form, "question_edit_form": question_edit_form}, )
 
@@ -51,7 +51,7 @@ def edit_question_view(request, question_id):
 
     # update the question
     if request.method == "POST":
-        question_edit_form = QuestionCreateForm(request.POST, instance=question)
+        question_edit_form = QuestionEditForm(request.POST, instance=question)
         if question_edit_form.is_valid() and question.userID == request.user:
             question = question_edit_form.save(commit=False)
             question.updateCount = question.updateCount + 1

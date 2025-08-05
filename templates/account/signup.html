@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% url 'account_login' as login_url %}
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 {% block content %}
 
@@ -10,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-12 text-center">
             <h1 id="signin-title" class="display-3 gradient-text header-title-text">Sign Up</h1>
-            <p class="header-text">Welcome to Planet Maths. If you already have an account, then <a class="link-text link-button" href="{{ signup_url }}">sign in.</a></p>
+            <p class="header-text">Welcome to Planet Maths. If you already have an account, then <a href="{{ login_url }}" class="btn ms-lg-3 signin-button link-text">sign in.</a></p>
         </div>
     </div>
 </header>
