@@ -4,9 +4,11 @@ from django.urls import reverse
 from question.models import Question
 from .forms import QuestionCreateForm, QuestionEditForm
 from django.contrib.auth.decorators import login_required
-
+from django.contrib import messages
 
 # Create your views here.
+
+
 @login_required
 def manage_questions_page_view(request):
     """
@@ -40,7 +42,12 @@ def create_question_view(request):
             question = question_create_form.save(commit=False)
             question.userID = request.user
             question.save()
+            messages.add_message(request, messages.SUCCESS,
+                                 "Question successfully uploaded.")
+            return HttpResponseRedirect(reverse("manage_questions_page"))
 
+        else:
+            messages.add_message(request, messages.ERROR, "Form not valid.")
             return HttpResponseRedirect(reverse("manage_questions_page"))
     else:
         return HttpResponseRedirect(reverse("manage_questions_page"))
@@ -62,7 +69,14 @@ def edit_question_view(request, question_id):
             question = question_edit_form.save(commit=False)
             question.updateCount = question.updateCount + 1
             question.save()
+            messages.add_message(request, messages.SUCCESS,
+                                 "Question successfully edited.")
+            return HttpResponseRedirect(reverse("manage_questions_page"))
 
+        else:
+            messages.add_message(request, messages.ERROR, "Form not valid.")
+            return HttpResponseRedirect(reverse("manage_questions_page"))
+        
     return HttpResponseRedirect(reverse("manage_questions_page"))
 
 
@@ -78,5 +92,10 @@ def delete_question_view(request, question_id):
     # delete
     if question.userID == request.user:
         question.delete()
+        messages.add_message(request, messages.SUCCESS,
+                             "Question successfully deleted.")
+    else:
+        messages.add_message(request, messages.ERROR,
+                             "An unexpected error occured.")
 
     return HttpResponseRedirect(reverse("manage_questions_page"))

@@ -46,6 +46,10 @@ h2 {
     font-weight: bold;
 }
 
+a {
+    text-decoration: none;
+}
+
 .vertical-align-text {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -99,22 +103,8 @@ h2 {
 
 .link-text {
     text-decoration: none;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--highlight-colour-1);
-    border: 2px solid var(--highlight-colour-1);
-    border-radius: 10px;
-    padding: 5px;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s
-}
-
-.link-text:hover {
-    color: var(--highlight-colour-2);
-    border: 2px solid var(--highlight-colour-2);
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s
 }
 
 /* navbar */
@@ -189,6 +179,7 @@ h2 {
     border-radius: 10px;
     background-color: var(--box-colour-1);
     margin: 10px;
+    padding-top: 10px;
 
 }
 
@@ -450,6 +441,38 @@ h2 {
 .delete-question-button:hover:active {
     border: 2px solid white;
     background-color: var(--box-colour-2);
+    color: white;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.signin-button {
+    border: 2px solid var(--highlight-colour-1);
+    background-color: var(--background-colour-1);
+    color: var(--highlight-colour-1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.signin-button:hover {
+    border: 2px solid var(--highlight-colour-2);
+    color: var(--highlight-colour-2);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s
+
+}
+
+.signin-button:hover:active {
+    border: 2px solid white;
     color: white;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);

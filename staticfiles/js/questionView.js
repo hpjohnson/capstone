@@ -42,8 +42,12 @@ function viewQuestion() {
             document.querySelector(".question-view-date-created").innerHTML = `Date Posted: ${questionDateCreated}`;
             document.querySelector(".question-view-date-updated").innerHTML = `Last Update: ${questionDateUpdated}`;
             document.querySelector(".question-view-update-count").innerHTML = `Update Count: ${questionUpdateCount}`;
-            document.querySelector(".question-view-id").setAttribute("data-id", questionID)
-            document.querySelector(".question-view-summary").innerHTML = questionSummary;
+            if (document.querySelector(".question-view-id")) {
+                document.querySelector(".question-view-id").setAttribute("data-id", questionID)
+            }
+            if (document.querySelector(".question-view-summary")) {
+                document.querySelector(".question-view-summary").innerHTML = questionSummary;
+            }
 
             // set the correct class for the difficulty
             const questionDifficultyElement = document.querySelector(".question-view-difficulty");
@@ -76,10 +80,13 @@ function viewQuestion() {
             }  
             
             // stop the edit window being clickable until a question is clicked
-            setEditData();
+            if (document.querySelector(".question-edit-button")) {
+                setEditData();
+            }
             // stop the delete button being clickable until a question is clicked
-            deleteQuestion();
-
+            if (document.querySelector(".question-delete-button")) {
+                deleteQuestion();
+            }
         })
     }
 }

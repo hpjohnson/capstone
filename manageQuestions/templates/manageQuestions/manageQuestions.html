@@ -15,6 +15,21 @@
 
 <!-- main content -->
 <main>
+    {% if messages %}
+    <!-- box for the django messages if they exist -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissable fade show" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn alert-button" data-bs-dismiss="alert" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
     <!-- box for the question create button, and any others that may be added -->
     <div class="container">
         <div class="row justify-content-center">
