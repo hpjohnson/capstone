@@ -76,7 +76,7 @@ def edit_question_view(request, question_id):
         else:
             messages.add_message(request, messages.ERROR, "Form not valid.")
             return HttpResponseRedirect(reverse("manage_questions_page"))
-        
+
     return HttpResponseRedirect(reverse("manage_questions_page"))
 
 
