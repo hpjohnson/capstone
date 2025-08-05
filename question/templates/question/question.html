@@ -23,8 +23,8 @@
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 question-card-box">
                 <div class="card question-card" data-id="{{ question.questionID }}" data-difficulty="{{ question.difficulty }}" data-created-on="{{ question.dateCreated }}" data-last-updated="{{ question.dateUpdated }}" data-update-count="{{ question.updateCount }}">
                     <div class="card-body question-card-body">
-                        <h5 class="card-title question-title gradient-text">{{ question.title }}</h5>
-                        <h6 class="card-subtitle question-subtitle">Posted By: {{ question.userID }}</h6>
+                        <h2 class="card-title question-title gradient-text">{{ question.title }}</h2>
+                        <h3 class="card-subtitle question-subtitle">Posted By: {{ question.userID }}</h3>
                         <p class="question-summary">{{ question.summary }}</p>
                         <p class="hidden question-content">{{ question.content }}</p>
                         
@@ -56,7 +56,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content question-view-modal">
                 <div class="modal-header">
-                    <h5 id="question-view-modal-label" class="modal-title gradient-text">View Question</h5>
+                    <h2 id="question-view-modal-label" class="modal-title gradient-text">View Question</h2>
                 </div>
                 <div class="modal-body">
                     <p class="question-view-title gradient-text"></p>
