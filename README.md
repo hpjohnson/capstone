@@ -42,6 +42,12 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [Navbar Collapse and Expand](#navbar-collapse-and-expand)
         - [Question Cards](#question-cards)
     - [Accessibility](#accessibility)
+* [Deployment and Tools](#deployment-and-tools)
+    - [Deployment](#deployment)
+    - [Tools](#tools)
+        - [Applications and Tools Used](#applications-and-tools-used)
+        - [Languages](#languages)
+        - [Libraries and Frameworks](#libraries-and-frameworks)
 
 # UX Design
 
@@ -235,7 +241,7 @@ The project is deployed using Heroku. The general steps taken are as follows -
 
 ## Tools
 
-### Applications & Tools Used
+### Applications and Tools Used
 
 - [VSCode](https://code.visualstudio.com/) IDE.
 - [WAVE](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) for accessibility testing.
