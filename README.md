@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Planet Maths is my final project developed for the Code Institute Full Stack Web Development course. It was designed following a simple set of guidelines - use a Django backend to create a website that allows for user CRUD (create, read, update, delete) functionality.
+Planet Maths is my final project developed for the Code Institute Full Stack Web Development course. It was designed following a simple set of guidelines - use a [Django](https://docs.djangoproject.com/en/5.2/releases/4.2.23/) backend to create a website that allows for user CRUD (create, read, update, delete) functionality.
 
 ## Project Outline
 
@@ -48,7 +48,21 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [Applications and Tools Used](#applications-and-tools-used)
         - [Languages](#languages)
         - [Libraries and Frameworks](#libraries-and-frameworks)
-
+* [Testing and Validation](#testing-and-validation)
+    - [Testing](#testing)
+    - [Validation](#validation)
+        - [HTML](#html)
+            - [Home Page HTML](#home-page-html)
+            - [About Page HTML](#about-page-html)
+            - [Search Questions Page HTML](#search-questions-page-html)
+            - [Your Questions Page HTML](#your-questions-page-html)
+            - [Sign In Page HTML](#sign-in-page-html)
+            - [Sign Out Page HTML](#sign-out-page-html)
+            - [Sign Up Page HTML](#sign-up-page-html)
+        - [CSS](#css)
+        - [Javascript](#javascript)
+        - [Python](#python)
+        
 # UX Design
 
 ## User Stories
@@ -250,7 +264,9 @@ The project is deployed using Heroku. The general steps taken are as follows -
 - [Colour Contrast Checker](https://colourcontrast.cc/) for colour contrast checking.
 - [Squoosh](https://squoosh.app/) for image compression for this readme.
 - [Shields.io](https://shields.io/) for language badges.
-
+- [JSHint](https://jshint.com/) for javascript checking.
+- [W3C Markup Validation Service](https://validator.w3.org/) for HTML validation.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) for CSS validation
 
 ### Languages
 
@@ -267,7 +283,59 @@ The project is deployed using Heroku. The general steps taken are as follows -
 
 # Testing and Validation
 
-## Index
+## Testing
+
+## Validation
+
+### HTML
+
+HTML was validated using the [W3C Markup Validation Service](https://validator.w3.org/). All pages pass with only ignorable warnings, with a notable exception being the sign up page. The issue with this page is on django's end and not with anything I've coded myself - the default signup form simply has incorrect HTML. For the future, I would design my own login forms to improve the styling and fix this error. However for now, I will simply leave it as is and note the issue down here.
+
+#### Home Page HTML
+
+![Home Page HTML](docs/validation/indexHTML.webp)
+
+#### About Page HTML
+
+![About Page HTML](docs/validation/aboutHTML.webp)
+
+#### Search Questions Page HTML
+
+![Search Questions Page HTML](docs/validation/questionHTML.webp)
+
+#### Your Questions Page HTML
+
+![Your Questions Page HTML](docs/validation/manageQuestionsHTML.webp)
+
+#### Sign In Page HTML
+
+![Sign In Page HTML](docs/validation/loginHTML.webp)
+
+#### Sign Out Page HTML
+
+![Sign Out Page HTML](docs/validation/logoutHTML.webp)
+
+#### Sign Up Page HTML
+
+As noted above, this page does not pass the validation through no fault of my own.
+
+![Sign Up Page HTML](docs/validation/signUp.webp)
+
+### CSS
+
+CSS was validated using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri).
+
+![CSS](docs/validation/css.webp)
+
+### Javascript
+
+Javascript was validated using [JSHint](https://jshint.com/). There are some unused variables that I elected to leave in as they will be of use for potential further updates to the website.
+
+![JS](docs/validation/js.webp)
+
+### Python
+
+All python code written follows the PEP8 standard. Compliance was assured using an extension from within VSCode. All files pass, with the exception of the settings.py file inside the config folder. This fail is unavoidable, due to the length of some of django's module names forcing lines to be over the character limit imposed by PEP8. Screenshots will not be provided for this, as there are far too many pages to include in this document.
 
 # AI Usage and Implementation
 
