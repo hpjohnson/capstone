@@ -107,6 +107,12 @@ a {
     font-weight: 700;
 }
 
+
+/* so that the successful log in messages appear */
+.index-messages {
+    margin-top: 14px;
+}
+
 /* navbar */
 #navbar {
     background-color: var(--box-colour-1);
