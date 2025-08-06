@@ -62,7 +62,7 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [CSS](#css)
         - [Javascript](#javascript)
         - [Python](#python)
-        
+
 # UX Design
 
 ## User Stories
@@ -345,9 +345,17 @@ AI was not used in this project for the reasons stated below.
 
 ## AI Code Generation
 
+This website is simple, and was created with the purpose to learn how to create a website from scratch. For these reasons, I chose to forgo using AI for code generation purposes. In addition, I code because I enjoy the puzzle solving aspect - using AI would then deprive all the enjoyment I get out of coding.
+
 ## AI Debugging
 
+Bugs were fixed manually while coding. Any issues I came across could be easily addressed using the error messages provided, and logic errors were simple to fix upon re-read of code. It would have been slower to rely on AI for this purpose.
+
+## AI Testing
+
 ## AI Optimisation
+
+Google lighthouse gives the website a perfect 100 across the board for optimisation. Therefore AI was of no use for optimisation.
 
 ## Reflection on AI Usage
 
