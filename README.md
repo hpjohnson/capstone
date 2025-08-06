@@ -115,7 +115,7 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/).
 
 ### Navbar
 
-A responsive bootstrap navbar is used for site navigation. On smaller screen sizes, the text gets moved to a dropdown menu.
+A responsive [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) navbar is used for site navigation. On smaller screen sizes, the text gets moved to a dropdown menu.
 
 ![Navbar](docs/features/navbar.webp)
 
@@ -133,7 +133,7 @@ The about page serves as a more indepth look at the website, and its current ava
 
 ### Search Questions Page
 
-The search questions page contains a list of all questions that have been approved for viewing. Each one is a simple bootstrap card which contains pertinant information, and a view button which opens a modal for full information. See the [Responsive Design](#responsive-design) section for more detail on how they have been made responsive.
+The search questions page contains a list of all questions that have been approved for viewing. Each one is a simple [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) card which contains pertinant information, and a view button which opens a modal for full information. See the [Responsive Design](#responsive-design) section for more detail on how they have been made responsive.
 
 ![Search Questions Page](docs/features/searchQuestions.webp)
 
@@ -141,7 +141,7 @@ The search questions page contains a list of all questions that have been approv
 
 ### Your Questions Page
 
-The your questions page allows for a user to submit new questions, and view any questions they have submitted. They may also update, and delete any questions they have uploaded. This functionality is implemented using bootstrap modals, with a variety of buttons to open the correct modals and to automatically fill in information as required. The question cards are layed out using identical functionality as the search questions page.
+The your questions page allows for a user to submit new questions, and view any questions they have submitted. They may also update, and delete any questions they have uploaded. This functionality is implemented using [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) modals, with a variety of buttons to open the correct modals and to automatically fill in information as required. The question cards are layed out using identical functionality as the search questions page.
 
 ![Your Questions Page](docs/features/yourQuestions.webp)
 
@@ -164,6 +164,25 @@ These pages allow for the user to perform account related features specified by 
 ![Sign In Page](docs/features/signIn.webp)
 
 ## Responsive Design
+
+Media queries and appropriate [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) classes are used to ensure the website looks nice across all screen sizes. Media queries are used to align the heights of cards where appropriate, and change text size to prevent newlines in the navbar in cases where the user is logged in with a long username on certain screen sizes. 
+
+### Navbar
+
+The navbar collapses on smaller screen sizes.
+
+![Collapsed Navbar](docs/responsive/navbarCollapsed.webp)
+
+![Open Navbar](docs/responsive/navbarOpen.webp)
+
+### Question Cards
+
+Question cards either take up the full width, a half width, a third width, or a quarter width of the screen dependant on screen size. This was achieved using [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) columns. The questions are dynamically placed based on heights using the [Masonry](https://getbootstrap.com/docs/5.0/examples/masonry/) plugin.
+
+<p><a href="docs/responsive/masonrySM.webp" target="_blank">Small Screens</a></p>
+<p><a href="docs/responsive/masonryMD.webp" target="_blank">Medium Screens</a></p>
+<p><a href="docs/responsive/masonryLG.webp" target="_blank">Large Screens</a></p>
+<p><a href="docs/responsive/masonryXL.webp" target="_blank">Extra Large Screens</a></p>
 
 # Deployment and Tools
 
