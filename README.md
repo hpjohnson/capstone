@@ -24,7 +24,11 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [Should Have](#should-have)
         - [Could Have](#could-have)
         - [Won't Have](#wont-have)
-
+    - [Theming](#theming)
+        - [Colours Used](#colours-used)
+            - [Main Colours](#main-colours)
+            - [Misc Colours](#misc-colours)
+    - [Font]
 # UX Design
 
 ## User Stories
@@ -67,6 +71,8 @@ All colours pass contrast checkers for accessibility - I used [WAVE](https://chr
 
 Colour names provided by [Colour Namer](https://colornamer.robertcooper.me/), using the "Wikipedia Colour Names" colour list.
 
+Main colours make up the majority of colours on the website. The misc colours are for smaller highlights - for example, the colours of the difficulty indicators.
+
 #### Main Colours
 
 - Smoky Black `#060018`
@@ -86,7 +92,13 @@ Colour names provided by [Colour Namer](https://colornamer.robertcooper.me/), us
 - Mona Lisa `#ff8d8d`
 - Red Salsa `#ff3e3e`
 
+![Colour Contrast Gif](docs/misc/colours-gif.gif)
+
 ## Font
+
+I wanted a simple blocky, high-tech looking font to complete the look of my website. I chose [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono), sourced from [Google Fonts](https://fonts.google.com/).
+
+For a consistent look, I chose to use only a single font for the entirety of the website. Important text like titles are made to stand out via usage of a gradient effect, and/or by increasing the font weight for a bold look. 
 
 ## Wireframes
 
