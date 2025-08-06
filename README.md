@@ -42,6 +42,7 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [Navbar Collapse and Expand](#navbar-collapse-and-expand)
         - [Question Cards](#question-cards)
     - [Accessibility](#accessibility)
+
 # UX Design
 
 ## User Stories
@@ -125,7 +126,7 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/).
 
 ### Navbar
 
-A responsive [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) navbar is used for site navigation. On smaller screen sizes, the text gets moved to a dropdown menu.
+A responsive [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/) navbar is used for site navigation. On smaller screen sizes, the text gets moved to a dropdown menu.
 
 ![Navbar](docs/features/navbar.webp)
 
@@ -143,7 +144,7 @@ The about page serves as a more indepth look at the website, and its current ava
 
 ### Search Questions Page
 
-The search questions page contains a list of all questions that have been approved for viewing. Each one is a simple [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) card which contains pertinant information, and a view button which opens a modal for full information. See the [Responsive Design](#responsive-design) section for more detail on how they have been made responsive.
+The search questions page contains a list of all questions that have been approved for viewing. Each one is a simple [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/) card which contains pertinant information, and a view button which opens a modal for full information. See the [Responsive Design](#responsive-design) section for more detail on how they have been made responsive.
 
 ![Search Questions Page](docs/features/searchQuestions.webp)
 
@@ -151,7 +152,7 @@ The search questions page contains a list of all questions that have been approv
 
 ### Your Questions Page
 
-The your questions page allows for a user to submit new questions, and view any questions they have submitted. They may also update, and delete any questions they have uploaded. This functionality is implemented using [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) modals, with a variety of buttons to open the correct modals and to automatically fill in information as required. The question cards are layed out using identical functionality as the search questions page.
+The your questions page allows for a user to submit new questions, and view any questions they have submitted. They may also update, and delete any questions they have uploaded. This functionality is implemented using [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/) modals, with a variety of buttons to open the correct modals and to automatically fill in information as required. The question cards are layed out using identical functionality as the search questions page.
 
 ![Your Questions Page](docs/features/yourQuestions.webp)
 
@@ -175,7 +176,7 @@ These pages allow for the user to perform account related features specified by 
 
 ## Responsive Design
 
-Media queries and appropriate [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) classes are used to ensure the website looks nice across all screen sizes. Media queries are used to align the heights of cards where appropriate, and change text size to prevent newlines in the navbar in cases where the user is logged in with a long username on certain screen sizes. 
+Media queries and appropriate [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/) classes are used to ensure the website looks nice across all screen sizes. Media queries are used to align the heights of cards where appropriate, and change text size to prevent newlines in the navbar in cases where the user is logged in with a long username on certain screen sizes. 
 
 ### Navbar Collapse and Expand
 
@@ -187,7 +188,7 @@ The navbar collapses on smaller screen sizes.
 
 ### Question Cards
 
-Question cards either take up the full width, a half width, a third width, or a quarter width of the screen dependant on screen size. This was achieved using [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) columns. The questions are dynamically placed based on heights using the [Masonry](https://getbootstrap.com/docs/5.0/examples/masonry/) plugin.
+Question cards either take up the full width, a half width, a third width, or a quarter width of the screen dependant on screen size. This was achieved using [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/) columns. The questions are dynamically placed based on heights using the [Masonry](https://masonry.desandro.com/) plugin.
 
 <p><a href="docs/responsive/masonrySM.webp" target="_blank">Small Screens</a></p>
 
@@ -219,11 +220,44 @@ Best accessibility practices were evaluated using [WAVE](https://chromewebstore.
 
 ## Deployment
 
+The project is deployed using Heroku. The general steps taken are as follows - 
+
+1. Configuration
+    1. Create and link project to database
+    2. Obscure environment variables into a seperate file
+    3. Add environment variables to Heroku 
+    4. Configure Procfile to allow Heroku to use an appropriate server
+    5. Create requirements.txt so correct python modules may be imported
+    6. Ensure debug is only enabled when local hosting
+2. Deployment
+    1. Push changes to Github
+    2. Deploy from Heroku
+
 ## Tools
+
+### Applications & Tools Used
+
+- [VSCode](https://code.visualstudio.com/) IDE.
+- [WAVE](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) for accessibility testing.
+- [Google Lighthouse](https://developer.chrome.com/docs/lighthouse) for best practices.
+- [Google Fonts](https://fonts.google.com/) for fonts.
+- [Colour Contrast Checker](https://colourcontrast.cc/) for colour contrast checking.
+- [Squoosh](https://squoosh.app/) for image compression for this readme.
+- [Shields.io](https://shields.io/) for language badges.
+
 
 ### Languages
 
+![Static Badge](https://img.shields.io/badge/HTML5-grey?logo=html5&logoColor=%23ffffff&color=%23E34F26)
+![Static Badge](https://img.shields.io/badge/CSS3-grey?logo=css3&logoColor=%23ffffff&color=%231572B6)
+![Static Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)
+![Static Badge](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
+
 ### Libraries and Frameworks
+
+- The python libraries used for this project can be viewed in the requirements.txt file.
+- [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/)
+- [Masonry](https://masonry.desandro.com/)
 
 # Testing and Validation
 

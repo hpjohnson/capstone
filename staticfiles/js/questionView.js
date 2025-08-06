@@ -3,9 +3,9 @@
  */
 document.addEventListener("DOMContentLoaded", function() {
     
-    viewQuestion()
+    viewQuestion();
 
-})
+});
 
 /**
  * add event listeners and functionality to all view buttons
@@ -37,13 +37,13 @@ function viewQuestion() {
             // set data in the modal
             document.querySelector(".question-view-title").innerHTML = questionTitle;
             document.querySelector(".question-view-subtitle").innerHTML = questionSubtitle;
-            document.querySelector(".question-view-difficulty").innerHTML = questionDifficulty
+            document.querySelector(".question-view-difficulty").innerHTML = questionDifficulty;
             document.querySelector(".question-view-content").innerHTML = questionContent;
             document.querySelector(".question-view-date-created").innerHTML = `Date Posted: ${questionDateCreated}`;
             document.querySelector(".question-view-date-updated").innerHTML = `Last Update: ${questionDateUpdated}`;
             document.querySelector(".question-view-update-count").innerHTML = `Update Count: ${questionUpdateCount}`;
             if (document.querySelector(".question-view-id")) {
-                document.querySelector(".question-view-id").setAttribute("data-id", questionID)
+                document.querySelector(".question-view-id").setAttribute("data-id", questionID);
             }
             if (document.querySelector(".question-view-summary")) {
                 document.querySelector(".question-view-summary").innerHTML = questionSummary;
@@ -56,7 +56,7 @@ function viewQuestion() {
             const DIFFICULTYCLASSLIST = ["question-easy", "question-medium", "question-hard", "question-insane", "question-none"];
 
             // remove the class
-            for (difficulty of DIFFICULTYCLASSLIST) {
+            for (let difficulty of DIFFICULTYCLASSLIST) {
                 questionDifficultyElement.classList.remove(`${difficulty}`);
             }
 
@@ -87,7 +87,7 @@ function viewQuestion() {
             if (document.querySelector(".question-delete-button")) {
                 deleteQuestion();
             }
-        })
+        });
     }
 }
 
@@ -117,7 +117,7 @@ function setEditData() {
         // set the text in the question
 
         // first get the correct form
-        questionEditModal = document.getElementById("question-edit-modal");
+        const questionEditModal = document.getElementById("question-edit-modal");
 
         // set data
         questionEditModal.querySelector(".question-edit-title").setAttribute("value", questionTitle);
@@ -141,8 +141,7 @@ function setEditData() {
 
         // set the form action
         questionEditModal.querySelector(".question-form").setAttribute("action", `/manage_questions/edit_question/${questionID}/`);
-    })
-
+    });
 }
 
 /**
@@ -155,11 +154,9 @@ function deleteQuestion() {
     deleteButton.addEventListener("click", function() {
 
         // get the question id
-        questionID = document.querySelector(".question-view-id").getAttribute("data-id");
+        const questionID = document.querySelector(".question-view-id").getAttribute("data-id");
 
         // create the correct link
         document.getElementById("delete-question").setAttribute("href", `/manage_questions/delete_question/${questionID}/`);
-    
-    })
-
+    });
 }
