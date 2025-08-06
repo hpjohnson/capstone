@@ -30,6 +30,8 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
             - [Misc Colours](#misc-colours)
     - [Font](#font)
     - [Wireframes](#wireframes)
+*[Features](#features)
+
 # UX Design
 
 ## User Stories
@@ -110,6 +112,56 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/).
 # Features
 
 ## General Features
+
+### Navbar
+
+A responsive bootstrap navbar is used for site navigation. On smaller screen sizes, the text gets moved to a dropdown menu.
+
+![Navbar](docs/features/navbar.webp)
+
+### Home Page
+
+The home page serves as a brief introduction to the website, along with links to the Search Questions page, and the About Page for further information.
+
+![Home Page](docs/features/home.webp)
+
+### About Page
+
+The about page serves as a more indepth look at the website, and its current avaliable features.
+
+![About Page](docs/features/about.webp)
+
+### Search Questions Page
+
+The search questions page contains a list of all questions that have been approved for viewing. Each one is a simple bootstrap card which contains pertinant information, and a view button which opens a modal for full information. See the [Responsive Design](#responsive-design) section for more detail on how they have been made responsive.
+
+![Search Questions Page](docs/features/searchQuestions.webp)
+
+![Search Questions Question View](docs/features/searchQuestionsView.webp)
+
+### Your Questions Page
+
+The your questions page allows for a user to submit new questions, and view any questions they have submitted. They may also update, and delete any questions they have uploaded. This functionality is implemented using bootstrap modals, with a variety of buttons to open the correct modals and to automatically fill in information as required. The question cards are layed out using identical functionality as the search questions page.
+
+![Your Questions Page](docs/features/yourQuestions.webp)
+
+![Create Question Modal](docs/features/yourQuestionsCreateQuestion.webp)
+
+![View Question Modal](docs/features/yourQuestionsViewQuestion.webp)
+
+![Edit Question Modal](docs/features/yourQuestionsEditQuestion.webp)
+
+![Delete Question Modal](docs/features/yourQuestionsDeleteQuestion.webp)
+
+### Sign Up, Sign In, Logout Pages
+
+These pages allow for the user to perform account related features specified by the title of the page. 
+
+![Sign Out Page](docs/features/signOut.webp)
+
+![Sign Up Page](docs/features/signUp.webp)
+
+![Sign In Page](docs/features/signIn.webp)
 
 ## Responsive Design
 
