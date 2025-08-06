@@ -30,8 +30,18 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
             - [Misc Colours](#misc-colours)
     - [Font](#font)
     - [Wireframes](#wireframes)
-*[Features](#features)
-
+* [Features](#features)
+    - [General Features](#general-features)
+        - [Navbar](#navbar)
+        - [Home Page](#home-page)
+        - [About Page](#about-page)
+        - [Search Questions Page](#search-questions-page)
+        - [Your Questions Page](#your-questions-page)
+        - [Sign Up, Sign In, Logout Pages](#sign-up-sign-in-logout-pages)
+    - [Responsive Design](#responsive-design)
+        - [Navbar Collapse and Expand](#navbar-collapse-and-expand)
+        - [Question Cards](#question-cards)
+    - [Accessibility](#accessibility)
 # UX Design
 
 ## User Stories
@@ -167,7 +177,7 @@ These pages allow for the user to perform account related features specified by 
 
 Media queries and appropriate [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) classes are used to ensure the website looks nice across all screen sizes. Media queries are used to align the heights of cards where appropriate, and change text size to prevent newlines in the navbar in cases where the user is logged in with a long username on certain screen sizes. 
 
-### Navbar
+### Navbar Collapse and Expand
 
 The navbar collapses on smaller screen sizes.
 
@@ -180,9 +190,30 @@ The navbar collapses on smaller screen sizes.
 Question cards either take up the full width, a half width, a third width, or a quarter width of the screen dependant on screen size. This was achieved using [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/download/) columns. The questions are dynamically placed based on heights using the [Masonry](https://getbootstrap.com/docs/5.0/examples/masonry/) plugin.
 
 <p><a href="docs/responsive/masonrySM.webp" target="_blank">Small Screens</a></p>
+
 <p><a href="docs/responsive/masonryMD.webp" target="_blank">Medium Screens</a></p>
+
 <p><a href="docs/responsive/masonryLG.webp" target="_blank">Large Screens</a></p>
+
 <p><a href="docs/responsive/masonryXL.webp" target="_blank">Extra Large Screens</a></p>
+
+## Accessibility
+
+Best accessibility practices were evaluated using [WAVE](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh). The results for each page that a general user is expected to use are shown below (ie the admin panel was not checked, as it cannot be used by anyone other than myself).
+
+![Home Page Wave](docs/wave/homeWave.webp)
+
+![About Page Wave](docs/wave/aboutWave.webp)
+
+![Search Questions Wave](docs/wave/searchWave.webp)
+
+![Your Questions Wave](docs/wave/manageWave.webp)
+
+![Sign Up Wave](docs/wave/signupWave.webp)
+
+![Sign In Wave](docs/wave/loginWave.webp)
+
+![Sign Out Wave](docs/wave/logoutWave.webp)
 
 # Deployment and Tools
 
