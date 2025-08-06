@@ -36,7 +36,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav {% if user.is_authenticated %}small-text{% endif %}">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
                             href="{% url 'home_page' %}">Home</a>
@@ -50,7 +50,7 @@
                             href="{% url 'about_page' %}">About</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav {% if user.is_authenticated %}small-text{% endif %} ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == manage_questions_url %}active" aria-current="page{% endif %}"

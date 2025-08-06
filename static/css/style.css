@@ -484,23 +484,23 @@ a {
 
 /* media queries */
 
-/* fix navbar font being too large on a very specific couple of screen sizes */
+/* fix navbar font being too large on a very specific couple of screen sizes when logged in */
 @media screen and (max-width: 1111px) {
 
-    .navbar-nav {
+    .small-text {
         font-size: 0.8rem;
     }
     
 }
 
-/* large screen sizes and below */
-@media screen and (max-width: 992px) {
-    
-    .navbar-nav {
+@media screen and (max-width: 991px){
+
+    .small-text {
         font-size: 1rem;
     }
     
 }
+
 
 /* large and above */
 @media screen and (min-width: 992px) {
