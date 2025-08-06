@@ -50,6 +50,14 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [Libraries and Frameworks](#libraries-and-frameworks)
 * [Testing and Validation](#testing-and-validation)
     - [Testing](#testing)
+        - [Best Practices and Optimisation](#best-practices-and-optimisation)
+            - [Home Page Lighthouse](#home-page-lighthouse)
+            - [About Page Lighthouse](#about-page-lighthouse)
+            - [Search Questions Page Lighthouse](#search-questions-page-lighthouse)
+            - [Your Questions Page Lighthouse](#your-questions-page-lighthouse)
+            - [Sign In Page Lighthouse](#sign-in-page-lighthouse)
+            - [Sign Out Page Lighthouse](#sign-out-page-lighthouse)
+            - [Sign Up Page Lighthouse](#sign-up-page-lighthouse)     
     - [Validation](#validation)
         - [HTML](#html)
             - [Home Page HTML](#home-page-html)
@@ -284,6 +292,38 @@ The project is deployed using Heroku. The general steps taken are as follows -
 # Testing and Validation
 
 ## Testing
+
+### Best Practices and Optimisation
+
+Best practices and optimisation were evaluated using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse). All pages of the website score perfect marks for both of these categories.
+
+#### Home Page Lighthouse
+
+![Home Page Lighthouse](docs/testing/lighthouse/homeLighthouse.webp)
+
+#### About Page Lighthouse
+
+![About Page Lighthouse](docs/testing/lighthouse/aboutLighthouse.webp)
+
+#### Search Questions Page Lighthouse
+
+![Search Questions Page Lighthouse](docs/testing/lighthouse/questionsLighthouse.webp)
+
+#### Your Questions Page Lighthouse
+
+![Your Questions Page Lighthouse](docs/testing/lighthouse/manageQuestionsLighthouse.webp)
+
+#### Sign In Page Lighthouse
+
+![Sign In Page Lighthouse](docs/testing/lighthouse/loginLighthouse.webp)
+
+#### Sign Out Page Lighthouse
+
+![Sign Out Page Lighthouse](docs/testing/lighthouse/logoutLighthouse.webp)
+
+#### Sign Up Page Lighthouse
+
+![Sign Up Page Lighthouse](docs/testing/lighthouse/signupLighthouse.webp)
 
 ## Validation
 
