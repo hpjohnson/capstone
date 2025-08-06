@@ -28,7 +28,8 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [Colours Used](#colours-used)
             - [Main Colours](#main-colours)
             - [Misc Colours](#misc-colours)
-    - [Font]
+    - [Font](#font)
+    - [Wireframes](#wireframes)
 # UX Design
 
 ## User Stories
@@ -101,6 +102,10 @@ I wanted a simple blocky, high-tech looking font to complete the look of my webs
 For a consistent look, I chose to use only a single font for the entirety of the website. Important text like titles are made to stand out via usage of a gradient effect, and/or by increasing the font weight for a bold look. 
 
 ## Wireframes
+
+Wireframes were created using [Balsamiq](https://balsamiq.com/).
+
+<p><a href="docs/misc/wireframes.webp" target="_blank">Click to view wireframes.</a></p>
 
 # Features
 
