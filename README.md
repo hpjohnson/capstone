@@ -50,6 +50,12 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [Libraries and Frameworks](#libraries-and-frameworks)
 * [Testing and Validation](#testing-and-validation)
     - [Testing](#testing)
+        - [Automatic Tests](#automatic-tests)
+        - [Manual Tests](#manual-tests)
+            - [Only Approved Questions Appear on Search Questions Page](#only-approved-questions-appear-on-search-questions-page)
+            - [Only Owned Questions Appear on Your Questions Page](#only-owned-questions-appear-on-your-questions-page)
+            - [Can Only Edit and Delete Owned Questions](#can-only-edit-and-delete-owned-questions)
+            - [General Features Testing](#general-features-testing)
         - [Best Practices and Optimisation](#best-practices-and-optimisation)
             - [Home Page Lighthouse](#home-page-lighthouse)
             - [About Page Lighthouse](#about-page-lighthouse)
@@ -70,6 +76,13 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
         - [CSS](#css)
         - [Javascript](#javascript)
         - [Python](#python)
+* [AI Usage and Implementation](#ai-usage-and-implementation)
+    - [AI Code Generation](#ai-code-generation)
+    - [AI Debugging](#ai-debugging)
+    - [AI Testing](#ai-testing)
+    - [AI Optimisation](#ai-optimisation)
+    - [Reflection on AI Usage](#reflection-on-ai-usage)
+* [References and Credits](#references-and-credits)
 
 # UX Design
 
