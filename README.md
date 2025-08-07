@@ -429,10 +429,14 @@ Bugs were fixed manually while coding. Any issues I came across could be easily 
 
 ## AI Testing
 
+Due to unforseen circumstances, I was unable to complete the coursework on automatic testing before starting work on this project. I decided it would be appropriate to then use my own project as the basis for completing this part of the course, rather than the provided demo project. In addition, manual testing was done throughout development to ensure features worked as I implemented them. As a result, AI was not necessary for this purpose.
+
 ## AI Optimisation
 
 Google lighthouse gives the website a perfect 100 across the board for optimisation. Therefore AI was of no use for optimisation.
 
 ## Reflection on AI Usage
+
+AI was of no use for this project. Due to the simplicity of the website, it would have been far slower to generate code, manually ensure it looks correct, and test it than just writing it myself. My workflow of testing features as soon as they are implemented made AI not needed for testing, optimisation, or debugging. In addition, I enjoy making things myself - asking a machine to do it for me would deprive me of the joy of a hobby, and actively disrupt any form of knowledge/understanding I would hope to gain from completing a course such as this one.
 
 # References and Credits
