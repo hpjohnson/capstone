@@ -30,6 +30,7 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
             - [Misc Colours](#misc-colours)
     - [Font](#font)
     - [Wireframes](#wireframes)
+* [Database Design](#database-design)
 * [Features](#features)
     - [General Features](#general-features)
         - [Navbar](#navbar)
