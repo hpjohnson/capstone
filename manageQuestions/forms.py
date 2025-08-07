@@ -18,9 +18,9 @@ class QuestionCreateForm(forms.ModelForm):
     approved = forms.ChoiceField(choices=STATUS, label="Save or Submit?")
 
     # add classes for styling
-    title.widget.attrs.update({"placeholder": "Title",
+    title.widget.attrs.update({"placeholder": "Title (Max 100 Characters)",
                                "class": "question-edit-title"})
-    summary.widget.attrs.update({"placeholder": "Summary",
+    summary.widget.attrs.update({"placeholder": "Summary (Max 200 Characters)",
                                  "class": "question-edit-summary"})
     content.widget.attrs.update({"placeholder": "Content",
                                  "class": "question-edit-content"})
@@ -43,10 +43,10 @@ class QuestionEditForm(forms.ModelForm):
     approved = forms.ChoiceField(choices=STATUS, label="Save or Submit?")
 
     # add classes for styling
-    title.widget.attrs.update({"placeholder": "Title",
+    title.widget.attrs.update({"placeholder": "Title (Max 100 Characters)",
                                "class": "question-edit-title",
                                "id": "id_title_edit"})
-    summary.widget.attrs.update({"placeholder": "Summary",
+    summary.widget.attrs.update({"placeholder": "Summary (Max 200 Characters)",
                                  "class": "question-edit-summary",
                                 "id": "id_summary_edit"})
     content.widget.attrs.update({"placeholder": "Content",

@@ -47,8 +47,10 @@
                 <div class="card question-card" data-id="{{ question.questionID }}"
                     data-difficulty="{{ question.difficulty }}" data-created-on="{{ question.dateCreated }}"
                     data-last-updated="{{ question.dateUpdated }}" data-update-count="{{ question.updateCount }}">
-                    <div class="card-body question-card-body">
+                    <div class="card-header question-card-header">
                         <h2 class="card-title question-title gradient-text">{{ question.title }}</h2>
+                    </div>
+                    <div class="card-body question-card-body">
                         <h3 class="card-subtitle question-subtitle">Posted By: {{ question.userID }}</h3>
                         <p class="question-summary">{{ question.summary }}</p>
                         <p class="hidden question-content">{{ question.content }}</p>

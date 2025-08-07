@@ -107,7 +107,6 @@ a {
     font-weight: 700;
 }
 
-
 /* so that the successful log in messages appear */
 .index-messages {
     margin-top: 14px;
@@ -208,12 +207,14 @@ a {
     border-radius: 10px;
 }
 
-.question-card-body {
-    background-color: var(--box-colour-1);
+.question-card-header {
+    background-color: var(--box-colour-2);
+    border-bottom: 2px solid var(--border-colour-1);
+    padding-top: 14px;
 }
 
-.question-card-footer {
-    background-color: var(--box-colour-2);
+.question-card-body {
+    background-color: var(--box-colour-1);
 }
 
 .question-title {
@@ -234,6 +235,8 @@ a {
 .question-card-footer {
     color: white;
     font-weight: 700;
+    background-color: var(--box-colour-2);
+    border-top: 2px solid var(--border-colour-1);
 }
 
 .question-easy {
