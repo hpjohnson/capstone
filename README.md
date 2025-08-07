@@ -293,6 +293,42 @@ The project is deployed using Heroku. The general steps taken are as follows -
 
 ## Testing
 
+### Automatic Tests
+
+Automated testing was used to forcefully enter invalid data into forms. The testing file for this can be seen in `manageQuestions/test_forms.py`. I only need to test one of the forms with this method (I chose the create form) as the forms are identical, save for a couple of HTML classes and ids. The outcome from the testing I am looking for is 9/9 failed tests, which is what occurs.
+
+![Automatic Testing Results](docs/testing/auto/autoTest.webp)
+
+### Manual Tests
+
+#### Only Approved Questions Appear on Search Questions Page
+
+This functions correctly, as determined by looking at the page and the admin panel and manually checking values. This can also be seen in the screenshots below - the questions circled in red on the your questions page correctly do not appear on the search questions page.
+
+![Approved Questions Only Your Questions](docs/testing/manual/approvedTestingYourQuestions.webp)
+
+![Approved Questions Only Search Questions](docs/testing/manual/approvedTestingSearchQuestions.webp)
+
+#### Only Owned Questions Appear on Your Questions Page
+
+This functions correctly, as determined by checking the admin panel and pages manually. It can also be seen in the below screenshots, questions posted by a different user circled in red do not appear on the your questions page.
+
+![Only Owned Questions Search Questions](docs/testing/manual/onlyOwnedQuestionsSearchQuestions.webp)
+
+![Only Owned Questions Your Questions](docs/testing/manual/onlyOwnedQuestionsYourQuestions.webp)
+
+#### Can Only Edit and Delete Owned Questions
+
+While only the questions you actually own can appear on your own page, it is possible to change the questionID manually in the HTML to attempt to delete another persons question. Ideally to prevent this, I would encrypt this id before serving the questions to the user and decrypt once the server recieves the id back, but the method of checking the id and returning a message works correctly for now. I checked this by editing the HTML manually. The corresponding error messages in the screenshots below are "An unexpected error occured" for deletion, and "Form not valid" for editing.
+
+![Delete Others Questions](docs/testing/manual/deleteOthersQuestion.webp)
+
+![Edit Others Questions](docs/testing/manual/editOthersQuestions.webp)
+
+#### General Features Testing
+
+All other pages work correctly when attempting to view them, and for their general function. Any questions titled "TestQuestionFromForm" were created using the form on the page and were successfully added to the website, and any that have the word "Edited" in the title were edited from the form on page.
+
 ### Best Practices and Optimisation
 
 Best practices and optimisation were evaluated using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse). All pages of the website score perfect marks for both of these categories.
