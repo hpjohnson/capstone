@@ -90,6 +90,8 @@ Planet Maths was developed with the goal of allowing anyone to submit maths ques
 
 ### A Note on Agile
 
+This project was developed using an agile workflow, as requested by Code Institute. The project board can be seen [here](https://github.com/users/hpjohnson/projects/3).
+
 For brevity, only the main text of each user story will be listed here. For full user stories (along with addition features not yet implemented), please visit the [project board](https://github.com/users/hpjohnson/projects/3). As of the creation of this readme, only the must haves are implemented.
 
 ### Must Have
